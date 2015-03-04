@@ -96,4 +96,14 @@ set_global_assignment -name VERILOG_FILE DISP_RAM.v
 set_global_assignment -name VERILOG_FILE DE0_VGA.v
 set_global_assignment -name VERILOG_FILE DE0_GameBoy_DMG01.v
 set_global_assignment -name MIF_FILE DE0_GameBoy_DMG01.mif
+set_location_assignment PIN_AA10 -to DIRA[0]
+set_location_assignment PIN_AB10 -to OEA[0]
+set_location_assignment PIN_Y10 -to OEB[0]
+set_location_assignment PIN_AB18 -to OEC[0]
+set_location_assignment PIN_R11 -to OED[0]
+set_location_assignment PIN_AB4 -to GB_HSync[0]
+set_location_assignment PIN_AA4 -to GB_Data1[0]
+set_location_assignment PIN_V14 -to GB_Data0[0]
+set_location_assignment PIN_U14 -to GB_PClk[0]
+set_location_assignment PIN_U13 -to GB_VSync[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_GameBoy_DMG01
-Sun Jan 25 23:05:46 2015
+Tue Mar 03 23:51:57 2015
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -29,9 +29,10 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  21. Parameter Settings for User Entity Instance: ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component
  22. altpll Parameter Settings by Entity Instance
  23. altsyncram Parameter Settings by Entity Instance
- 24. Port Connectivity Checks: "DE0_VGA:VGA_Driver"
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
+ 24. Port Connectivity Checks: "ScreenShot_RAM:ScreenShot_RAM_Driver"
+ 25. Port Connectivity Checks: "DE0_VGA:VGA_Driver"
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -57,18 +58,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jan 25 23:05:46 2015           ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 03 23:51:57 2015           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE0_GameBoy_DMG01                               ;
 ; Top-level Entity Name              ; DE0_GameBoy_DMG01                               ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 3,578                                           ;
+; Total logic elements               ; 3,580                                           ;
 ;     Total combinational functions  ; 3,563                                           ;
-;     Dedicated logic registers      ; 1,733                                           ;
-; Total registers                    ; 1733                                            ;
-; Total pins                         ; 49                                              ;
+;     Dedicated logic registers      ; 1,736                                           ;
+; Total registers                    ; 1736                                            ;
+; Total pins                         ; 38                                              ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 131,072                                         ;
+; Total memory bits                  ; 65,536                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
 ; Total PLLs                         ; 1                                               ;
 +------------------------------------+-------------------------------------------------+
@@ -173,33 +174,33 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                           ;
-+----------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                   ; Library ;
-+----------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------+---------+
-; ScreenShot_RAM.v                 ; yes             ; User Wizard-Generated File       ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01/ScreenShot_RAM.v           ;         ;
-; PLL_PIXEL_CLK.v                  ; yes             ; User Wizard-Generated File       ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01/PLL_PIXEL_CLK.v            ;         ;
-; DISP_RAM.v                       ; yes             ; User Wizard-Generated File       ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01/DISP_RAM.v                 ;         ;
-; DE0_VGA.v                        ; yes             ; User Verilog HDL File            ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01/DE0_VGA.v                  ;         ;
-; DE0_GameBoy_DMG01.v              ; yes             ; User Verilog HDL File            ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01/DE0_GameBoy_DMG01.v        ;         ;
-; DE0_GameBoy_DMG01.mif            ; yes             ; User Memory Initialization File  ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01/DE0_GameBoy_DMG01.mif      ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                   ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc               ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc              ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc            ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc            ;         ;
-; db/pll_pixel_clk_altpll2.v       ; yes             ; Auto-Generated Megafunction      ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01/db/pll_pixel_clk_altpll2.v ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf               ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc        ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                  ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc               ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                ;         ;
-; altrom.inc                       ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                   ;         ;
-; altram.inc                       ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                   ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                 ;         ;
-; db/altsyncram_mgq1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01/db/altsyncram_mgq1.tdf     ;         ;
-+----------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
++----------------------------------+-----------------+----------------------------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                ; Library ;
++----------------------------------+-----------------+----------------------------------+---------------------------------------------------------------------------------------------+---------+
+; ScreenShot_RAM.v                 ; yes             ; User Wizard-Generated File       ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/ScreenShot_RAM.v           ;         ;
+; PLL_PIXEL_CLK.v                  ; yes             ; User Wizard-Generated File       ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/PLL_PIXEL_CLK.v            ;         ;
+; DISP_RAM.v                       ; yes             ; User Wizard-Generated File       ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/DISP_RAM.v                 ;         ;
+; DE0_VGA.v                        ; yes             ; User Verilog HDL File            ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/DE0_VGA.v                  ;         ;
+; DE0_GameBoy_DMG01.v              ; yes             ; User Verilog HDL File            ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/DE0_GameBoy_DMG01.v        ;         ;
+; DE0_GameBoy_DMG01.mif            ; yes             ; User Memory Initialization File  ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/DE0_GameBoy_DMG01.mif      ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                                ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                            ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc                           ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc                         ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc                         ;         ;
+; db/pll_pixel_clk_altpll2.v       ; yes             ; Auto-Generated Megafunction      ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/db/pll_pixel_clk_altpll2.v ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                            ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                     ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                               ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                            ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                             ;         ;
+; altrom.inc                       ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                ;         ;
+; altram.inc                       ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                              ;         ;
+; db/altsyncram_mgq1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/db/altsyncram_mgq1.tdf     ;         ;
++----------------------------------+-----------------+----------------------------------+---------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -207,7 +208,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                    ;
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 3,578                                                                                                                    ;
+; Estimated Total logic elements              ; 3,580                                                                                                                    ;
 ;                                             ;                                                                                                                          ;
 ; Total combinational functions               ; 3563                                                                                                                     ;
 ; Logic element usage by number of LUT inputs ;                                                                                                                          ;
@@ -219,20 +220,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- normal mode                          ; 3464                                                                                                                     ;
 ;     -- arithmetic mode                      ; 99                                                                                                                       ;
 ;                                             ;                                                                                                                          ;
-; Total registers                             ; 1733                                                                                                                     ;
-;     -- Dedicated logic registers            ; 1733                                                                                                                     ;
+; Total registers                             ; 1736                                                                                                                     ;
+;     -- Dedicated logic registers            ; 1736                                                                                                                     ;
 ;     -- I/O registers                        ; 0                                                                                                                        ;
 ;                                             ;                                                                                                                          ;
-; I/O pins                                    ; 49                                                                                                                       ;
-; Total memory bits                           ; 131072                                                                                                                   ;
+; I/O pins                                    ; 38                                                                                                                       ;
+; Total memory bits                           ; 65536                                                                                                                    ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                                                                        ;
 ; Total PLLs                                  ; 1                                                                                                                        ;
 ;     -- PLLs                                 ; 1                                                                                                                        ;
 ;                                             ;                                                                                                                          ;
 ; Maximum fan-out node                        ; DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll2:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 1750                                                                                                                     ;
-; Total fan-out                               ; 18185                                                                                                                    ;
-; Average fan-out                             ; 3.36                                                                                                                     ;
+; Maximum fan-out                             ; 1745                                                                                                                     ;
+; Total fan-out                               ; 18063                                                                                                                    ;
+; Average fan-out                             ; 3.35                                                                                                                     ;
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -241,7 +242,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Library Name ;
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE0_GameBoy_DMG01                                 ; 3563 (3475)       ; 1733 (1695)  ; 131072      ; 0            ; 0       ; 0         ; 49   ; 0            ; |DE0_GameBoy_DMG01                                                                                                         ; work         ;
+; |DE0_GameBoy_DMG01                                 ; 3563 (3475)       ; 1736 (1698)  ; 65536       ; 0            ; 0       ; 0         ; 38   ; 0            ; |DE0_GameBoy_DMG01                                                                                                         ; work         ;
 ;    |DE0_VGA:VGA_Driver|                            ; 88 (88)           ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DE0_VGA:VGA_Driver                                                                                      ; work         ;
 ;       |PLL_PIXEL_CLK:pll_inst0|                    ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0                                                              ; work         ;
 ;          |altpll:altpll_component|                 ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component                                      ; work         ;
@@ -249,32 +250,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |DISP_RAM:RAM_Driver|                           ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DISP_RAM:RAM_Driver                                                                                     ; work         ;
 ;       |altsyncram:altsyncram_component|            ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DISP_RAM:RAM_Driver|altsyncram:altsyncram_component                                                     ; work         ;
 ;          |altsyncram_mgq1:auto_generated|          ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DISP_RAM:RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated                      ; work         ;
-;    |ScreenShot_RAM:ScreenShot_RAM_Driver|          ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|ScreenShot_RAM:ScreenShot_RAM_Driver                                                                    ; work         ;
-;       |altsyncram:altsyncram_component|            ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component                                    ; work         ;
-;          |altsyncram_mgq1:auto_generated|          ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated     ; work         ;
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                     ;
-+----------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------------------+
-; Name                                                                                                           ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                   ;
-+----------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------------------+
-; DISP_RAM:RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated|ALTSYNCRAM                  ; AUTO ; Simple Dual Port ; 8192         ; 8            ; 8192         ; 8            ; 65536 ; DE0_GameBoy_DMG01.mif ;
-; ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 8192         ; 8            ; 8192         ; 8            ; 65536 ; DE0_GameBoy_DMG01.mif ;
-+----------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                    ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------------------+
+; Name                                                                                          ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                   ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------------------+
+; DISP_RAM:RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 8192         ; 8            ; 8192         ; 8            ; 65536 ; DE0_GameBoy_DMG01.mif ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                                                ;
-+--------+--------------+---------+--------------+--------------+---------------------------------------------------------------+----------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                               ; IP Include File                                                      ;
-+--------+--------------+---------+--------------+--------------+---------------------------------------------------------------+----------------------------------------------------------------------+
-; Altera ; RAM: 2-PORT  ; N/A     ; N/A          ; N/A          ; |DE0_GameBoy_DMG01|DISP_RAM:RAM_Driver                        ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01/DISP_RAM.v       ;
-; Altera ; RAM: 2-PORT  ; N/A     ; N/A          ; N/A          ; |DE0_GameBoy_DMG01|ScreenShot_RAM:ScreenShot_RAM_Driver       ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01/ScreenShot_RAM.v ;
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |DE0_GameBoy_DMG01|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0 ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01/PLL_PIXEL_CLK.v  ;
-+--------+--------------+---------+--------------+--------------+---------------------------------------------------------------+----------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                             ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------------------------+-----------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                               ; IP Include File                                                                   ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------------------------+-----------------------------------------------------------------------------------+
+; Altera ; RAM: 2-PORT  ; N/A     ; N/A          ; N/A          ; |DE0_GameBoy_DMG01|DISP_RAM:RAM_Driver                        ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/DISP_RAM.v       ;
+; Altera ; RAM: 2-PORT  ; N/A     ; N/A          ; N/A          ; |DE0_GameBoy_DMG01|ScreenShot_RAM:ScreenShot_RAM_Driver       ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/ScreenShot_RAM.v ;
+; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |DE0_GameBoy_DMG01|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0 ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/PLL_PIXEL_CLK.v  ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -304,13 +301,26 @@ Encoding Type:  One-Hot
 +-----------------------------------------+----------------------------------------+
 ; Register name                           ; Reason for Removal                     ;
 +-----------------------------------------+----------------------------------------+
-; GB_color_01[1,9]                        ; Merged with GB_color_00[4]             ;
-; GB_color_10[1,2,4,6,9,10]               ; Merged with GB_color_00[4]             ;
-; GB_color_11[0,8,10,11]                  ; Merged with GB_color_00[4]             ;
+; read_addr[0]                            ; Merged with write_addr[0]              ;
+; read_addr[1]                            ; Merged with write_addr[1]              ;
+; read_addr[2]                            ; Merged with write_addr[2]              ;
+; read_addr[3]                            ; Merged with write_addr[3]              ;
+; read_addr[4]                            ; Merged with write_addr[4]              ;
+; read_addr[5]                            ; Merged with write_addr[5]              ;
+; read_addr[6]                            ; Merged with write_addr[6]              ;
+; read_addr[7]                            ; Merged with write_addr[7]              ;
+; read_addr[8]                            ; Merged with write_addr[8]              ;
+; read_addr[9]                            ; Merged with write_addr[9]              ;
+; read_addr[10]                           ; Merged with write_addr[10]             ;
+; read_addr[11]                           ; Merged with write_addr[11]             ;
+; read_addr[12]                           ; Merged with write_addr[12]             ;
 ; GB_color_00[8]                          ; Merged with GB_color_00[0]             ;
 ; GB_color_01[0,4,5,8]                    ; Merged with GB_color_00[0]             ;
 ; GB_color_10[0,5,8]                      ; Merged with GB_color_00[0]             ;
 ; GB_color_11[1..7,9]                     ; Merged with GB_color_00[0]             ;
+; GB_color_01[1,9]                        ; Merged with GB_color_00[4]             ;
+; GB_color_10[1,2,4,6,9,10]               ; Merged with GB_color_00[4]             ;
+; GB_color_11[0,8,10,11]                  ; Merged with GB_color_00[4]             ;
 ; GB_color_00[6]                          ; Merged with GB_color_00[1]             ;
 ; GB_color_01[2,6]                        ; Merged with GB_color_00[1]             ;
 ; GB_color_10[3,7]                        ; Merged with GB_color_00[1]             ;
@@ -479,6 +489,8 @@ Encoding Type:  One-Hot
 ; pixel_line_buf[3][7]                    ; Merged with pixel_line_buf[3][3]       ;
 ; pixel_line_buf[0][8]                    ; Merged with pixel_line_buf[0][0]       ;
 ; pixel_line_buf[0][7]                    ; Merged with pixel_line_buf[0][3]       ;
+; disp_mem_data[2,4,6]                    ; Merged with disp_mem_data[0]           ;
+; disp_mem_data[3,5,7]                    ; Merged with disp_mem_data[1]           ;
 ; pixel_line_buf[158][8]                  ; Merged with pixel_line_buf[158][0]     ;
 ; pixel_line_buf[158][7]                  ; Merged with pixel_line_buf[158][3]     ;
 ; pixel_line_buf[157][8]                  ; Merged with pixel_line_buf[157][0]     ;
@@ -640,7 +652,7 @@ Encoding Type:  One-Hot
 ; pixel_line_buf[1][8]                    ; Merged with pixel_line_buf[1][0]       ;
 ; pixel_line_buf[1][7]                    ; Merged with pixel_line_buf[1][3]       ;
 ; GB_color_00[10]                         ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 367 ;                                        ;
+; Total Number of Removed Registers = 386 ;                                        ;
 +-----------------------------------------+----------------------------------------+
 
 
@@ -649,12 +661,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1733  ;
+; Total registers                              ; 1736  ;
 ; Number of registers using Synchronous Clear  ; 21    ;
 ; Number of registers using Synchronous Load   ; 330   ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 576   ;
+; Number of registers using Clock Enable       ; 578   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -680,7 +692,7 @@ Encoding Type:  One-Hot
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|GB_color_00[0] ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|Y_cntpix[1]    ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|cntmem[2]      ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|read_addr[11]  ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|write_addr[11] ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|cnt144[6]      ;
 ; 265:1              ; 10 bits   ; 1760 LEs      ; 1120 LEs             ; 640 LEs                ; Yes        ; |DE0_GameBoy_DMG01|pixel_color[4] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
@@ -1265,6 +1277,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ScreenShot_RAM:ScreenShot_RAM_Driver"                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +---------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "DE0_VGA:VGA_Driver"                                                                      ;
 +-----------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1289,7 +1310,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Jan 25 23:05:29 2015
+    Info: Processing started: Tue Mar 03 23:51:36 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_GameBoy_DMG01 -c DE0_GameBoy_DMG01
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file screenshot_ram.v
@@ -1303,9 +1324,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file de0_vga
 Info (12021): Found 1 design units, including 1 entities, in source file de0_gameboy_dmg01.v
     Info (12023): Found entity 1: DE0_GameBoy_DMG01
 Info (12127): Elaborating entity "DE0_GameBoy_DMG01" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(177): truncated value with size 32 to match size of target (13)
-Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(178): truncated value with size 32 to match size of target (13)
-Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(253): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(206): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(207): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(209): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(284): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(285): truncated value with size 32 to match size of target (13)
 Info (12128): Elaborating entity "DE0_VGA" for hierarchy "DE0_VGA:VGA_Driver"
 Warning (10230): Verilog HDL assignment warning at DE0_VGA.v(45): truncated value with size 32 to match size of target (11)
 Warning (10230): Verilog HDL assignment warning at DE0_VGA.v(46): truncated value with size 32 to match size of target (11)
@@ -1398,57 +1421,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
     Info (12023): Found entity 1: altsyncram_mgq1
 Info (12128): Elaborating entity "altsyncram_mgq1" for hierarchy "DISP_RAM:RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated"
 Info (12128): Elaborating entity "ScreenShot_RAM" for hierarchy "ScreenShot_RAM:ScreenShot_RAM_Driver"
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[7]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[6]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[5]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[4]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[3]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[2]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[1]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[0]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[12]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[11]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[10]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[9]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[8]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[7]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[6]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[5]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[4]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[3]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[2]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[1]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[0]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_wren" is missing source, defaulting to GND
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[7]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[6]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[5]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[4]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[3]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[2]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[1]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_data[0]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[12]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[11]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[10]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[9]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[8]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[7]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[6]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[5]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[4]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[3]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[2]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[1]" is missing source, defaulting to GND
-    Warning (12110): Net "write_addr[0]" is missing source, defaulting to GND
-    Warning (12110): Net "disp_mem_wren" is missing source, defaulting to GND
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated|q_b[0]"
+        Warning (14320): Synthesized away node "ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated|q_b[1]"
+        Warning (14320): Synthesized away node "ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated|q_b[2]"
+        Warning (14320): Synthesized away node "ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated|q_b[3]"
+        Warning (14320): Synthesized away node "ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated|q_b[4]"
+        Warning (14320): Synthesized away node "ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated|q_b[5]"
+        Warning (14320): Synthesized away node "ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated|q_b[6]"
+        Warning (14320): Synthesized away node "ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated|q_b[7]"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "OEA[0]" is stuck at GND
+    Warning (13410): Pin "OEB[0]" is stuck at VCC
+    Warning (13410): Pin "OEC[0]" is stuck at VCC
+    Warning (13410): Pin "OED[0]" is stuck at VCC
+    Warning (13410): Pin "DIRA[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 11 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "INPUT_SWS[2]"
+Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "INPUT_SWS[3]"
     Warning (15610): No output dependent on input pin "INPUT_SWS[4]"
     Warning (15610): No output dependent on input pin "INPUT_SWS[5]"
@@ -1459,16 +1451,19 @@ Warning (21074): Design contains 11 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "INPUT_BTN[0]"
     Warning (15610): No output dependent on input pin "INPUT_BTN[1]"
     Warning (15610): No output dependent on input pin "INPUT_BTN[2]"
-Info (21057): Implemented 3667 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 27 input pins
-    Info (21059): Implemented 22 output pins
-    Info (21061): Implemented 3601 logic cells
-    Info (21064): Implemented 16 RAM segments
+    Warning (15610): No output dependent on input pin "GB_VSync[0]"
+    Warning (15610): No output dependent on input pin "GB_PClk[0]"
+    Warning (15610): No output dependent on input pin "GB_HSync[0]"
+Info (21057): Implemented 3650 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 19 output pins
+    Info (21061): Implemented 3603 logic cells
+    Info (21064): Implemented 8 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 64 warnings
-    Info: Peak virtual memory: 382 megabytes
-    Info: Processing ended: Sun Jan 25 23:05:47 2015
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:18
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 420 megabytes
+    Info: Processing ended: Tue Mar 03 23:51:57 2015
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:21
 
 

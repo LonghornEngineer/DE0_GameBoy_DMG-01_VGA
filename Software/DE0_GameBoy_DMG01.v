@@ -1,6 +1,7 @@
 module DE0_GameBoy_DMG01
 (
-	 clk_50, INPUT_SWS, INPUT_BTN, VGA_BUS_R, VGA_BUS_G, VGA_BUS_B, VGA_HS, VGA_VS, SS_read_addr, SS_disp_mem_q
+	 clk_50, INPUT_SWS, INPUT_BTN, VGA_BUS_R, VGA_BUS_G, VGA_BUS_B, VGA_HS, VGA_VS,
+	 OEA, OEB, OEC, OED, DIRA, GB_VSync, GB_PClk, GB_Data0, GB_Data1, GB_HSync
 );
 
 input		wire				clk_50;
@@ -33,12 +34,12 @@ output	reg	[0:0]		VGA_VS;
 			
 			reg	[7:0]  	disp_mem_data;
 			reg	[12:0]	read_addr;
-input		wire	[12:0]	SS_read_addr;
+			wire	[12:0]	SS_read_addr;
 			reg	[12:0]	write_addr;
-			reg				disp_mem_wren;
+			reg	[0:0]		disp_mem_wren;
 			
 			wire	[7:0]		disp_mem_q;
-output	wire	[7:0]		SS_disp_mem_q;
+			wire	[7:0]		SS_disp_mem_q;
 			
 			reg	[7:0]		cnt160;
 			reg	[7:0]		cnt144;
@@ -56,7 +57,19 @@ output	wire	[7:0]		SS_disp_mem_q;
 			reg	[11:0]	GB_color_01;
 			reg	[11:0]	GB_color_10;
 			reg	[11:0]	GB_color_11;
+			
+output	reg	[0:0]		OEA;
+output	reg	[0:0]		OEB;
+output	reg	[0:0]		OEC;
+output	reg	[0:0]		OED;
 
+output	reg	[0:0]		DIRA;
+
+input		wire	[0:0]		GB_VSync;
+input		wire	[0:0]		GB_PClk;
+input		wire	[0:0]		GB_Data0;
+input		wire	[0:0]		GB_Data1;
+input		wire	[0:0]		GB_HSync;
 			
 initial
 	begin
@@ -81,11 +94,26 @@ initial
 		GB_color_10		<= 0;
 		GB_color_11		<= 0;
 		
+		OEA				<= 0;
+		OEB				<= 1;
+		OEC				<= 1;
+		OED				<= 1;
+		
+		DIRA				<= 0;
+		
 	end
 	
 	
 always @(posedge pixel_clk)
 	begin
+		if(INPUT_SWS[2] == 0)
+			begin
+				disp_mem_wren <= 1'b1;
+			end
+		else
+			begin
+				disp_mem_wren <= 1'b0;
+			end
 		if(Y_pix != Y_pix_old )
 			begin
 				Y_pix_old <= Y_pix;
@@ -174,7 +202,10 @@ always @(posedge pixel_clk)
 					end
 				if(cntmem < 43)
 					begin
+						disp_mem_data <= {GB_Data1, GB_Data0, GB_Data1, GB_Data0, GB_Data1, GB_Data0, GB_Data1, GB_Data0};
 						read_addr <= cntmem + (mem144*40);	
+						write_addr <= cntmem + (mem144*40);	
+						
 						cntmem <= cntmem + 1;	
 
 						if(disp_mem_q[7:6] == 2'b00)
@@ -251,6 +282,7 @@ always @(posedge pixel_clk)
 				cntmem <= 0;
 
 				read_addr <= ((cnt144+1)*40);	
+				write_addr <= ((cnt144+1)*40);
 
 			end
 	end

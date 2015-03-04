@@ -1,5 +1,5 @@
 Flow report for DE0_GameBoy_DMG01
-Sun Jan 25 23:06:19 2015
+Tue Mar 03 23:52:28 2015
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,20 +40,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sun Jan 25 23:06:13 2015           ;
+; Flow Status                        ; Successful - Tue Mar 03 23:52:23 2015           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE0_GameBoy_DMG01                               ;
 ; Top-level Entity Name              ; DE0_GameBoy_DMG01                               ;
 ; Family                             ; Cyclone III                                     ;
 ; Device                             ; EP3C16F484C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 3,568 / 15,408 ( 23 % )                         ;
+; Total logic elements               ; 3,570 / 15,408 ( 23 % )                         ;
 ;     Total combinational functions  ; 3,564 / 15,408 ( 23 % )                         ;
-;     Dedicated logic registers      ; 1,733 / 15,408 ( 11 % )                         ;
-; Total registers                    ; 1733                                            ;
-; Total pins                         ; 49 / 347 ( 14 % )                               ;
+;     Dedicated logic registers      ; 1,736 / 15,408 ( 11 % )                         ;
+; Total registers                    ; 1736                                            ;
+; Total pins                         ; 38 / 347 ( 11 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 131,072 / 516,096 ( 25 % )                      ;
+; Total memory bits                  ; 65,536 / 516,096 ( 13 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                                 ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                                  ;
 +------------------------------------+-------------------------------------------------+
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/25/2015 23:05:29 ;
+; Start date & time ; 03/03/2015 23:51:37 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE0_GameBoy_DMG01   ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 9210271267999.142224872906452         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 9210271267999.142544829701052         ; --            ; --          ; --         ;
 ; FITTER_EFFORT                       ; Fast Fit                              ; Auto Fit      ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
@@ -98,11 +98,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:17     ; 1.0                     ; 382 MB              ; 00:00:17                           ;
-; Fitter                    ; 00:00:22     ; 1.0                     ; 535 MB              ; 00:00:21                           ;
+; Analysis & Synthesis      ; 00:00:20     ; 1.0                     ; 412 MB              ; 00:00:20                           ;
+; Fitter                    ; 00:00:21     ; 1.0                     ; 533 MB              ; 00:00:21                           ;
 ; Assembler                 ; 00:00:02     ; 1.0                     ; 359 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 386 MB              ; 00:00:05                           ;
-; Total                     ; 00:00:45     ; --                      ; --                  ; 00:00:45                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 388 MB              ; 00:00:05                           ;
+; Total                     ; 00:00:47     ; --                      ; --                  ; 00:00:48                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
