@@ -70,6 +70,14 @@ input		wire	[0:0]		GB_PClk;
 input		wire	[0:0]		GB_Data0;
 input		wire	[0:0]		GB_Data1;
 input		wire	[0:0]		GB_HSync;
+
+			reg	[7:0]		GB_Vcnt;
+			reg	[7:0]		GB_Hcnt;
+			reg	[159:0]	GB_Hbuff0;
+			reg	[159:0]	GB_Hbuff1;
+			
+			reg	[12:0]	wcntmem;
+			reg	[7:0]		wbuffcnt;
 			
 initial
 	begin
@@ -86,6 +94,7 @@ initial
 		cnt144			<= 0;
 		mem144			<= 0;
 		cntmem			<= 0;
+		wcntmem			<= 0;
 		Y_cntpix			<= 0;
 		X_cntpix			<= 0;
 		
@@ -103,17 +112,50 @@ initial
 		
 	end
 	
-	
-always @(posedge pixel_clk)
+always @(posedge GB_PClk)
 	begin
-		if(INPUT_SWS[2] == 0)
+		if(GB_VSync == 1)
 			begin
-				disp_mem_wren <= 1'b1;
+				GB_Vcnt <= 0;
+				GB_Hcnt <= 0;
 			end
 		else
 			begin
-				disp_mem_wren <= 1'b0;
+				if(GB_HSync == 1)
+					begin
+						GB_Vcnt <= GB_Vcnt + 1'b1;
+						GB_Hcnt <= 0;
+					end
+				else
+					begin
+						GB_Hbuff0[GB_Hcnt] <= !GB_Data0;
+						GB_Hbuff1[GB_Hcnt] <= !GB_Data1;
+						GB_Hcnt <= GB_Hcnt + 1'b1;
+					end
 			end
+	end
+
+always @(posedge pixel_clk)
+	begin
+		if(GB_HSync == 1 && wcntmem < 160 && H_visible == 1)
+			begin
+				disp_mem_wren <= 1;
+				wcntmem <= wcntmem + 1;
+				write_addr <= wcntmem + (GB_Vcnt*40);
+				wbuffcnt <= wbuffcnt + 4;
+				disp_mem_data <= {GB_Hbuff0[wbuffcnt], GB_Hbuff1[wbuffcnt], GB_Hbuff0[wbuffcnt+1], GB_Hbuff1[wbuffcnt+1], GB_Hbuff0[wbuffcnt+2], GB_Hbuff1[wbuffcnt+2], GB_Hbuff0[wbuffcnt+3], GB_Hbuff1[wbuffcnt+3]};
+			end
+		else
+			begin
+				disp_mem_wren <= 0;
+				wcntmem <= 0;
+				wbuffcnt <= 0;
+			end
+	end
+	
+	
+always @(posedge pixel_clk)
+	begin
 		if(Y_pix != Y_pix_old )
 			begin
 				Y_pix_old <= Y_pix;
@@ -202,10 +244,7 @@ always @(posedge pixel_clk)
 					end
 				if(cntmem < 43)
 					begin
-						disp_mem_data <= {GB_Data1, GB_Data0, GB_Data1, GB_Data0, GB_Data1, GB_Data0, GB_Data1, GB_Data0};
-						read_addr <= cntmem + (mem144*40);	
-						write_addr <= cntmem + (mem144*40);	
-						
+						read_addr <= cntmem + (mem144*40);
 						cntmem <= cntmem + 1;	
 
 						if(disp_mem_q[7:6] == 2'b00)
@@ -282,8 +321,6 @@ always @(posedge pixel_clk)
 				cntmem <= 0;
 
 				read_addr <= ((cnt144+1)*40);	
-				write_addr <= ((cnt144+1)*40);
-
 			end
 	end
 

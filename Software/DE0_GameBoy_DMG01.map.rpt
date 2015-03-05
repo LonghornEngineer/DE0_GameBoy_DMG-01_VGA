@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_GameBoy_DMG01
-Tue Mar 03 23:51:57 2015
+Wed Mar 04 21:53:05 2015
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -58,15 +58,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 03 23:51:57 2015           ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 04 21:53:04 2015           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE0_GameBoy_DMG01                               ;
 ; Top-level Entity Name              ; DE0_GameBoy_DMG01                               ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 3,580                                           ;
-;     Total combinational functions  ; 3,563                                           ;
-;     Dedicated logic registers      ; 1,736                                           ;
-; Total registers                    ; 1736                                            ;
+; Total logic elements               ; 4,418                                           ;
+;     Total combinational functions  ; 4,400                                           ;
+;     Dedicated logic registers      ; 2,110                                           ;
+; Total registers                    ; 2110                                            ;
 ; Total pins                         ; 38                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 65,536                                          ;
@@ -208,20 +208,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                    ;
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 3,580                                                                                                                    ;
+; Estimated Total logic elements              ; 4,418                                                                                                                    ;
 ;                                             ;                                                                                                                          ;
-; Total combinational functions               ; 3563                                                                                                                     ;
+; Total combinational functions               ; 4400                                                                                                                     ;
 ; Logic element usage by number of LUT inputs ;                                                                                                                          ;
-;     -- 4 input functions                    ; 2790                                                                                                                     ;
-;     -- 3 input functions                    ; 459                                                                                                                      ;
-;     -- <=2 input functions                  ; 314                                                                                                                      ;
+;     -- 4 input functions                    ; 3208                                                                                                                     ;
+;     -- 3 input functions                    ; 509                                                                                                                      ;
+;     -- <=2 input functions                  ; 683                                                                                                                      ;
 ;                                             ;                                                                                                                          ;
 ; Logic elements by mode                      ;                                                                                                                          ;
-;     -- normal mode                          ; 3464                                                                                                                     ;
-;     -- arithmetic mode                      ; 99                                                                                                                       ;
+;     -- normal mode                          ; 4254                                                                                                                     ;
+;     -- arithmetic mode                      ; 146                                                                                                                      ;
 ;                                             ;                                                                                                                          ;
-; Total registers                             ; 1736                                                                                                                     ;
-;     -- Dedicated logic registers            ; 1736                                                                                                                     ;
+; Total registers                             ; 2110                                                                                                                     ;
+;     -- Dedicated logic registers            ; 2110                                                                                                                     ;
 ;     -- I/O registers                        ; 0                                                                                                                        ;
 ;                                             ;                                                                                                                          ;
 ; I/O pins                                    ; 38                                                                                                                       ;
@@ -231,9 +231,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1                                                                                                                        ;
 ;                                             ;                                                                                                                          ;
 ; Maximum fan-out node                        ; DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll2:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 1745                                                                                                                     ;
-; Total fan-out                               ; 18063                                                                                                                    ;
-; Average fan-out                             ; 3.35                                                                                                                     ;
+; Maximum fan-out                             ; 1783                                                                                                                     ;
+; Total fan-out                               ; 21532                                                                                                                    ;
+; Average fan-out                             ; 3.26                                                                                                                     ;
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -242,7 +242,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Library Name ;
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE0_GameBoy_DMG01                                 ; 3563 (3475)       ; 1736 (1698)  ; 65536       ; 0            ; 0       ; 0         ; 38   ; 0            ; |DE0_GameBoy_DMG01                                                                                                         ; work         ;
+; |DE0_GameBoy_DMG01                                 ; 4400 (4312)       ; 2110 (2072)  ; 65536       ; 0            ; 0       ; 0         ; 38   ; 0            ; |DE0_GameBoy_DMG01                                                                                                         ; work         ;
 ;    |DE0_VGA:VGA_Driver|                            ; 88 (88)           ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DE0_VGA:VGA_Driver                                                                                      ; work         ;
 ;       |PLL_PIXEL_CLK:pll_inst0|                    ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0                                                              ; work         ;
 ;          |altpll:altpll_component|                 ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component                                      ; work         ;
@@ -301,26 +301,14 @@ Encoding Type:  One-Hot
 +-----------------------------------------+----------------------------------------+
 ; Register name                           ; Reason for Removal                     ;
 +-----------------------------------------+----------------------------------------+
-; read_addr[0]                            ; Merged with write_addr[0]              ;
-; read_addr[1]                            ; Merged with write_addr[1]              ;
-; read_addr[2]                            ; Merged with write_addr[2]              ;
-; read_addr[3]                            ; Merged with write_addr[3]              ;
-; read_addr[4]                            ; Merged with write_addr[4]              ;
-; read_addr[5]                            ; Merged with write_addr[5]              ;
-; read_addr[6]                            ; Merged with write_addr[6]              ;
-; read_addr[7]                            ; Merged with write_addr[7]              ;
-; read_addr[8]                            ; Merged with write_addr[8]              ;
-; read_addr[9]                            ; Merged with write_addr[9]              ;
-; read_addr[10]                           ; Merged with write_addr[10]             ;
-; read_addr[11]                           ; Merged with write_addr[11]             ;
-; read_addr[12]                           ; Merged with write_addr[12]             ;
+; wbuffcnt[0,1]                           ; Stuck at GND due to stuck port data_in ;
+; GB_color_01[1,9]                        ; Merged with GB_color_00[4]             ;
+; GB_color_10[1,2,4,6,9,10]               ; Merged with GB_color_00[4]             ;
+; GB_color_11[0,8,10,11]                  ; Merged with GB_color_00[4]             ;
 ; GB_color_00[8]                          ; Merged with GB_color_00[0]             ;
 ; GB_color_01[0,4,5,8]                    ; Merged with GB_color_00[0]             ;
 ; GB_color_10[0,5,8]                      ; Merged with GB_color_00[0]             ;
 ; GB_color_11[1..7,9]                     ; Merged with GB_color_00[0]             ;
-; GB_color_01[1,9]                        ; Merged with GB_color_00[4]             ;
-; GB_color_10[1,2,4,6,9,10]               ; Merged with GB_color_00[4]             ;
-; GB_color_11[0,8,10,11]                  ; Merged with GB_color_00[4]             ;
 ; GB_color_00[6]                          ; Merged with GB_color_00[1]             ;
 ; GB_color_01[2,6]                        ; Merged with GB_color_00[1]             ;
 ; GB_color_10[3,7]                        ; Merged with GB_color_00[1]             ;
@@ -331,328 +319,326 @@ Encoding Type:  One-Hot
 ; GB_color_10[11]                         ; Merged with GB_color_00[10]            ;
 ; pixel_color[7]                          ; Merged with pixel_color[3]             ;
 ; pixel_line_buf[159][7]                  ; Merged with pixel_line_buf[159][3]     ;
-; pixel_line_buf[156][8]                  ; Merged with pixel_line_buf[156][0]     ;
-; pixel_line_buf[156][7]                  ; Merged with pixel_line_buf[156][3]     ;
-; pixel_line_buf[155][8]                  ; Merged with pixel_line_buf[155][0]     ;
-; pixel_line_buf[155][7]                  ; Merged with pixel_line_buf[155][3]     ;
-; pixel_line_buf[152][8]                  ; Merged with pixel_line_buf[152][0]     ;
-; pixel_line_buf[152][7]                  ; Merged with pixel_line_buf[152][3]     ;
-; pixel_line_buf[151][8]                  ; Merged with pixel_line_buf[151][0]     ;
-; pixel_line_buf[151][7]                  ; Merged with pixel_line_buf[151][3]     ;
-; pixel_line_buf[148][8]                  ; Merged with pixel_line_buf[148][0]     ;
-; pixel_line_buf[148][7]                  ; Merged with pixel_line_buf[148][3]     ;
-; pixel_line_buf[147][8]                  ; Merged with pixel_line_buf[147][0]     ;
-; pixel_line_buf[147][7]                  ; Merged with pixel_line_buf[147][3]     ;
-; pixel_line_buf[144][8]                  ; Merged with pixel_line_buf[144][0]     ;
-; pixel_line_buf[144][7]                  ; Merged with pixel_line_buf[144][3]     ;
-; pixel_line_buf[143][8]                  ; Merged with pixel_line_buf[143][0]     ;
-; pixel_line_buf[143][7]                  ; Merged with pixel_line_buf[143][3]     ;
-; pixel_line_buf[140][8]                  ; Merged with pixel_line_buf[140][0]     ;
-; pixel_line_buf[140][7]                  ; Merged with pixel_line_buf[140][3]     ;
-; pixel_line_buf[139][8]                  ; Merged with pixel_line_buf[139][0]     ;
-; pixel_line_buf[139][7]                  ; Merged with pixel_line_buf[139][3]     ;
-; pixel_line_buf[136][8]                  ; Merged with pixel_line_buf[136][0]     ;
-; pixel_line_buf[136][7]                  ; Merged with pixel_line_buf[136][3]     ;
-; pixel_line_buf[135][8]                  ; Merged with pixel_line_buf[135][0]     ;
-; pixel_line_buf[135][7]                  ; Merged with pixel_line_buf[135][3]     ;
-; pixel_line_buf[132][8]                  ; Merged with pixel_line_buf[132][0]     ;
-; pixel_line_buf[132][7]                  ; Merged with pixel_line_buf[132][3]     ;
-; pixel_line_buf[131][8]                  ; Merged with pixel_line_buf[131][0]     ;
-; pixel_line_buf[131][7]                  ; Merged with pixel_line_buf[131][3]     ;
-; pixel_line_buf[128][8]                  ; Merged with pixel_line_buf[128][0]     ;
-; pixel_line_buf[128][7]                  ; Merged with pixel_line_buf[128][3]     ;
-; pixel_line_buf[127][8]                  ; Merged with pixel_line_buf[127][0]     ;
-; pixel_line_buf[127][7]                  ; Merged with pixel_line_buf[127][3]     ;
-; pixel_line_buf[124][8]                  ; Merged with pixel_line_buf[124][0]     ;
-; pixel_line_buf[124][7]                  ; Merged with pixel_line_buf[124][3]     ;
-; pixel_line_buf[123][8]                  ; Merged with pixel_line_buf[123][0]     ;
-; pixel_line_buf[123][7]                  ; Merged with pixel_line_buf[123][3]     ;
-; pixel_line_buf[120][8]                  ; Merged with pixel_line_buf[120][0]     ;
-; pixel_line_buf[120][7]                  ; Merged with pixel_line_buf[120][3]     ;
-; pixel_line_buf[119][8]                  ; Merged with pixel_line_buf[119][0]     ;
-; pixel_line_buf[119][7]                  ; Merged with pixel_line_buf[119][3]     ;
-; pixel_line_buf[116][8]                  ; Merged with pixel_line_buf[116][0]     ;
-; pixel_line_buf[116][7]                  ; Merged with pixel_line_buf[116][3]     ;
-; pixel_line_buf[115][8]                  ; Merged with pixel_line_buf[115][0]     ;
-; pixel_line_buf[115][7]                  ; Merged with pixel_line_buf[115][3]     ;
-; pixel_line_buf[112][8]                  ; Merged with pixel_line_buf[112][0]     ;
-; pixel_line_buf[112][7]                  ; Merged with pixel_line_buf[112][3]     ;
-; pixel_line_buf[111][8]                  ; Merged with pixel_line_buf[111][0]     ;
-; pixel_line_buf[111][7]                  ; Merged with pixel_line_buf[111][3]     ;
-; pixel_line_buf[108][8]                  ; Merged with pixel_line_buf[108][0]     ;
-; pixel_line_buf[108][7]                  ; Merged with pixel_line_buf[108][3]     ;
-; pixel_line_buf[107][8]                  ; Merged with pixel_line_buf[107][0]     ;
-; pixel_line_buf[107][7]                  ; Merged with pixel_line_buf[107][3]     ;
-; pixel_line_buf[104][8]                  ; Merged with pixel_line_buf[104][0]     ;
-; pixel_line_buf[104][7]                  ; Merged with pixel_line_buf[104][3]     ;
-; pixel_line_buf[103][8]                  ; Merged with pixel_line_buf[103][0]     ;
-; pixel_line_buf[103][7]                  ; Merged with pixel_line_buf[103][3]     ;
-; pixel_line_buf[100][8]                  ; Merged with pixel_line_buf[100][0]     ;
-; pixel_line_buf[100][7]                  ; Merged with pixel_line_buf[100][3]     ;
-; pixel_line_buf[99][8]                   ; Merged with pixel_line_buf[99][0]      ;
-; pixel_line_buf[99][7]                   ; Merged with pixel_line_buf[99][3]      ;
-; pixel_line_buf[96][8]                   ; Merged with pixel_line_buf[96][0]      ;
-; pixel_line_buf[96][7]                   ; Merged with pixel_line_buf[96][3]      ;
-; pixel_line_buf[95][8]                   ; Merged with pixel_line_buf[95][0]      ;
-; pixel_line_buf[95][7]                   ; Merged with pixel_line_buf[95][3]      ;
-; pixel_line_buf[92][8]                   ; Merged with pixel_line_buf[92][0]      ;
-; pixel_line_buf[92][7]                   ; Merged with pixel_line_buf[92][3]      ;
-; pixel_line_buf[91][8]                   ; Merged with pixel_line_buf[91][0]      ;
-; pixel_line_buf[91][7]                   ; Merged with pixel_line_buf[91][3]      ;
-; pixel_line_buf[88][8]                   ; Merged with pixel_line_buf[88][0]      ;
-; pixel_line_buf[88][7]                   ; Merged with pixel_line_buf[88][3]      ;
-; pixel_line_buf[87][8]                   ; Merged with pixel_line_buf[87][0]      ;
-; pixel_line_buf[87][7]                   ; Merged with pixel_line_buf[87][3]      ;
-; pixel_line_buf[84][8]                   ; Merged with pixel_line_buf[84][0]      ;
-; pixel_line_buf[84][7]                   ; Merged with pixel_line_buf[84][3]      ;
-; pixel_line_buf[83][8]                   ; Merged with pixel_line_buf[83][0]      ;
-; pixel_line_buf[83][7]                   ; Merged with pixel_line_buf[83][3]      ;
-; pixel_line_buf[80][8]                   ; Merged with pixel_line_buf[80][0]      ;
-; pixel_line_buf[80][7]                   ; Merged with pixel_line_buf[80][3]      ;
-; pixel_line_buf[79][8]                   ; Merged with pixel_line_buf[79][0]      ;
-; pixel_line_buf[79][7]                   ; Merged with pixel_line_buf[79][3]      ;
-; pixel_line_buf[76][8]                   ; Merged with pixel_line_buf[76][0]      ;
-; pixel_line_buf[76][7]                   ; Merged with pixel_line_buf[76][3]      ;
-; pixel_line_buf[75][8]                   ; Merged with pixel_line_buf[75][0]      ;
-; pixel_line_buf[75][7]                   ; Merged with pixel_line_buf[75][3]      ;
-; pixel_line_buf[72][8]                   ; Merged with pixel_line_buf[72][0]      ;
-; pixel_line_buf[72][7]                   ; Merged with pixel_line_buf[72][3]      ;
-; pixel_line_buf[71][8]                   ; Merged with pixel_line_buf[71][0]      ;
-; pixel_line_buf[71][7]                   ; Merged with pixel_line_buf[71][3]      ;
-; pixel_line_buf[68][8]                   ; Merged with pixel_line_buf[68][0]      ;
-; pixel_line_buf[68][7]                   ; Merged with pixel_line_buf[68][3]      ;
-; pixel_line_buf[67][8]                   ; Merged with pixel_line_buf[67][0]      ;
-; pixel_line_buf[67][7]                   ; Merged with pixel_line_buf[67][3]      ;
-; pixel_line_buf[64][8]                   ; Merged with pixel_line_buf[64][0]      ;
-; pixel_line_buf[64][7]                   ; Merged with pixel_line_buf[64][3]      ;
-; pixel_line_buf[63][8]                   ; Merged with pixel_line_buf[63][0]      ;
-; pixel_line_buf[63][7]                   ; Merged with pixel_line_buf[63][3]      ;
-; pixel_line_buf[60][8]                   ; Merged with pixel_line_buf[60][0]      ;
-; pixel_line_buf[60][7]                   ; Merged with pixel_line_buf[60][3]      ;
-; pixel_line_buf[59][8]                   ; Merged with pixel_line_buf[59][0]      ;
-; pixel_line_buf[59][7]                   ; Merged with pixel_line_buf[59][3]      ;
-; pixel_line_buf[56][8]                   ; Merged with pixel_line_buf[56][0]      ;
-; pixel_line_buf[56][7]                   ; Merged with pixel_line_buf[56][3]      ;
-; pixel_line_buf[55][8]                   ; Merged with pixel_line_buf[55][0]      ;
-; pixel_line_buf[55][7]                   ; Merged with pixel_line_buf[55][3]      ;
-; pixel_line_buf[52][8]                   ; Merged with pixel_line_buf[52][0]      ;
-; pixel_line_buf[52][7]                   ; Merged with pixel_line_buf[52][3]      ;
-; pixel_line_buf[51][8]                   ; Merged with pixel_line_buf[51][0]      ;
-; pixel_line_buf[51][7]                   ; Merged with pixel_line_buf[51][3]      ;
-; pixel_line_buf[48][8]                   ; Merged with pixel_line_buf[48][0]      ;
-; pixel_line_buf[48][7]                   ; Merged with pixel_line_buf[48][3]      ;
-; pixel_line_buf[47][8]                   ; Merged with pixel_line_buf[47][0]      ;
-; pixel_line_buf[47][7]                   ; Merged with pixel_line_buf[47][3]      ;
-; pixel_line_buf[44][8]                   ; Merged with pixel_line_buf[44][0]      ;
-; pixel_line_buf[44][7]                   ; Merged with pixel_line_buf[44][3]      ;
-; pixel_line_buf[43][8]                   ; Merged with pixel_line_buf[43][0]      ;
-; pixel_line_buf[43][7]                   ; Merged with pixel_line_buf[43][3]      ;
-; pixel_line_buf[40][8]                   ; Merged with pixel_line_buf[40][0]      ;
-; pixel_line_buf[40][7]                   ; Merged with pixel_line_buf[40][3]      ;
-; pixel_line_buf[39][8]                   ; Merged with pixel_line_buf[39][0]      ;
-; pixel_line_buf[39][7]                   ; Merged with pixel_line_buf[39][3]      ;
-; pixel_line_buf[36][8]                   ; Merged with pixel_line_buf[36][0]      ;
-; pixel_line_buf[36][7]                   ; Merged with pixel_line_buf[36][3]      ;
-; pixel_line_buf[35][8]                   ; Merged with pixel_line_buf[35][0]      ;
-; pixel_line_buf[35][7]                   ; Merged with pixel_line_buf[35][3]      ;
-; pixel_line_buf[32][8]                   ; Merged with pixel_line_buf[32][0]      ;
-; pixel_line_buf[32][7]                   ; Merged with pixel_line_buf[32][3]      ;
-; pixel_line_buf[31][8]                   ; Merged with pixel_line_buf[31][0]      ;
-; pixel_line_buf[31][7]                   ; Merged with pixel_line_buf[31][3]      ;
-; pixel_line_buf[28][8]                   ; Merged with pixel_line_buf[28][0]      ;
-; pixel_line_buf[28][7]                   ; Merged with pixel_line_buf[28][3]      ;
-; pixel_line_buf[27][8]                   ; Merged with pixel_line_buf[27][0]      ;
-; pixel_line_buf[27][7]                   ; Merged with pixel_line_buf[27][3]      ;
-; pixel_line_buf[24][8]                   ; Merged with pixel_line_buf[24][0]      ;
-; pixel_line_buf[24][7]                   ; Merged with pixel_line_buf[24][3]      ;
-; pixel_line_buf[23][8]                   ; Merged with pixel_line_buf[23][0]      ;
-; pixel_line_buf[23][7]                   ; Merged with pixel_line_buf[23][3]      ;
-; pixel_line_buf[20][8]                   ; Merged with pixel_line_buf[20][0]      ;
-; pixel_line_buf[20][7]                   ; Merged with pixel_line_buf[20][3]      ;
-; pixel_line_buf[19][8]                   ; Merged with pixel_line_buf[19][0]      ;
-; pixel_line_buf[19][7]                   ; Merged with pixel_line_buf[19][3]      ;
-; pixel_line_buf[16][8]                   ; Merged with pixel_line_buf[16][0]      ;
-; pixel_line_buf[16][7]                   ; Merged with pixel_line_buf[16][3]      ;
-; pixel_line_buf[15][8]                   ; Merged with pixel_line_buf[15][0]      ;
-; pixel_line_buf[15][7]                   ; Merged with pixel_line_buf[15][3]      ;
-; pixel_line_buf[12][8]                   ; Merged with pixel_line_buf[12][0]      ;
-; pixel_line_buf[12][7]                   ; Merged with pixel_line_buf[12][3]      ;
-; pixel_line_buf[11][8]                   ; Merged with pixel_line_buf[11][0]      ;
-; pixel_line_buf[11][7]                   ; Merged with pixel_line_buf[11][3]      ;
-; pixel_line_buf[8][8]                    ; Merged with pixel_line_buf[8][0]       ;
-; pixel_line_buf[8][7]                    ; Merged with pixel_line_buf[8][3]       ;
-; pixel_line_buf[7][8]                    ; Merged with pixel_line_buf[7][0]       ;
-; pixel_line_buf[7][7]                    ; Merged with pixel_line_buf[7][3]       ;
-; pixel_line_buf[4][8]                    ; Merged with pixel_line_buf[4][0]       ;
-; pixel_line_buf[4][7]                    ; Merged with pixel_line_buf[4][3]       ;
-; pixel_line_buf[3][8]                    ; Merged with pixel_line_buf[3][0]       ;
-; pixel_line_buf[3][7]                    ; Merged with pixel_line_buf[3][3]       ;
-; pixel_line_buf[0][8]                    ; Merged with pixel_line_buf[0][0]       ;
-; pixel_line_buf[0][7]                    ; Merged with pixel_line_buf[0][3]       ;
-; disp_mem_data[2,4,6]                    ; Merged with disp_mem_data[0]           ;
-; disp_mem_data[3,5,7]                    ; Merged with disp_mem_data[1]           ;
 ; pixel_line_buf[158][8]                  ; Merged with pixel_line_buf[158][0]     ;
 ; pixel_line_buf[158][7]                  ; Merged with pixel_line_buf[158][3]     ;
 ; pixel_line_buf[157][8]                  ; Merged with pixel_line_buf[157][0]     ;
 ; pixel_line_buf[157][7]                  ; Merged with pixel_line_buf[157][3]     ;
+; pixel_line_buf[156][8]                  ; Merged with pixel_line_buf[156][0]     ;
+; pixel_line_buf[156][7]                  ; Merged with pixel_line_buf[156][3]     ;
+; pixel_line_buf[155][8]                  ; Merged with pixel_line_buf[155][0]     ;
+; pixel_line_buf[155][7]                  ; Merged with pixel_line_buf[155][3]     ;
 ; pixel_line_buf[154][8]                  ; Merged with pixel_line_buf[154][0]     ;
 ; pixel_line_buf[154][7]                  ; Merged with pixel_line_buf[154][3]     ;
 ; pixel_line_buf[153][8]                  ; Merged with pixel_line_buf[153][0]     ;
 ; pixel_line_buf[153][7]                  ; Merged with pixel_line_buf[153][3]     ;
+; pixel_line_buf[152][8]                  ; Merged with pixel_line_buf[152][0]     ;
+; pixel_line_buf[152][7]                  ; Merged with pixel_line_buf[152][3]     ;
+; pixel_line_buf[151][8]                  ; Merged with pixel_line_buf[151][0]     ;
+; pixel_line_buf[151][7]                  ; Merged with pixel_line_buf[151][3]     ;
 ; pixel_line_buf[150][8]                  ; Merged with pixel_line_buf[150][0]     ;
 ; pixel_line_buf[150][7]                  ; Merged with pixel_line_buf[150][3]     ;
 ; pixel_line_buf[149][8]                  ; Merged with pixel_line_buf[149][0]     ;
 ; pixel_line_buf[149][7]                  ; Merged with pixel_line_buf[149][3]     ;
+; pixel_line_buf[148][8]                  ; Merged with pixel_line_buf[148][0]     ;
+; pixel_line_buf[148][7]                  ; Merged with pixel_line_buf[148][3]     ;
+; pixel_line_buf[147][8]                  ; Merged with pixel_line_buf[147][0]     ;
+; pixel_line_buf[147][7]                  ; Merged with pixel_line_buf[147][3]     ;
 ; pixel_line_buf[146][8]                  ; Merged with pixel_line_buf[146][0]     ;
 ; pixel_line_buf[146][7]                  ; Merged with pixel_line_buf[146][3]     ;
 ; pixel_line_buf[145][8]                  ; Merged with pixel_line_buf[145][0]     ;
 ; pixel_line_buf[145][7]                  ; Merged with pixel_line_buf[145][3]     ;
+; pixel_line_buf[144][8]                  ; Merged with pixel_line_buf[144][0]     ;
+; pixel_line_buf[144][7]                  ; Merged with pixel_line_buf[144][3]     ;
+; pixel_line_buf[143][8]                  ; Merged with pixel_line_buf[143][0]     ;
+; pixel_line_buf[143][7]                  ; Merged with pixel_line_buf[143][3]     ;
 ; pixel_line_buf[142][8]                  ; Merged with pixel_line_buf[142][0]     ;
 ; pixel_line_buf[142][7]                  ; Merged with pixel_line_buf[142][3]     ;
 ; pixel_line_buf[141][8]                  ; Merged with pixel_line_buf[141][0]     ;
 ; pixel_line_buf[141][7]                  ; Merged with pixel_line_buf[141][3]     ;
+; pixel_line_buf[140][8]                  ; Merged with pixel_line_buf[140][0]     ;
+; pixel_line_buf[140][7]                  ; Merged with pixel_line_buf[140][3]     ;
+; pixel_line_buf[139][8]                  ; Merged with pixel_line_buf[139][0]     ;
+; pixel_line_buf[139][7]                  ; Merged with pixel_line_buf[139][3]     ;
 ; pixel_line_buf[138][8]                  ; Merged with pixel_line_buf[138][0]     ;
 ; pixel_line_buf[138][7]                  ; Merged with pixel_line_buf[138][3]     ;
 ; pixel_line_buf[137][8]                  ; Merged with pixel_line_buf[137][0]     ;
 ; pixel_line_buf[137][7]                  ; Merged with pixel_line_buf[137][3]     ;
+; pixel_line_buf[136][8]                  ; Merged with pixel_line_buf[136][0]     ;
+; pixel_line_buf[136][7]                  ; Merged with pixel_line_buf[136][3]     ;
+; pixel_line_buf[135][8]                  ; Merged with pixel_line_buf[135][0]     ;
+; pixel_line_buf[135][7]                  ; Merged with pixel_line_buf[135][3]     ;
 ; pixel_line_buf[134][8]                  ; Merged with pixel_line_buf[134][0]     ;
 ; pixel_line_buf[134][7]                  ; Merged with pixel_line_buf[134][3]     ;
 ; pixel_line_buf[133][8]                  ; Merged with pixel_line_buf[133][0]     ;
 ; pixel_line_buf[133][7]                  ; Merged with pixel_line_buf[133][3]     ;
+; pixel_line_buf[132][8]                  ; Merged with pixel_line_buf[132][0]     ;
+; pixel_line_buf[132][7]                  ; Merged with pixel_line_buf[132][3]     ;
+; pixel_line_buf[131][8]                  ; Merged with pixel_line_buf[131][0]     ;
+; pixel_line_buf[131][7]                  ; Merged with pixel_line_buf[131][3]     ;
 ; pixel_line_buf[130][8]                  ; Merged with pixel_line_buf[130][0]     ;
 ; pixel_line_buf[130][7]                  ; Merged with pixel_line_buf[130][3]     ;
 ; pixel_line_buf[129][8]                  ; Merged with pixel_line_buf[129][0]     ;
 ; pixel_line_buf[129][7]                  ; Merged with pixel_line_buf[129][3]     ;
+; pixel_line_buf[128][8]                  ; Merged with pixel_line_buf[128][0]     ;
+; pixel_line_buf[128][7]                  ; Merged with pixel_line_buf[128][3]     ;
+; pixel_line_buf[127][8]                  ; Merged with pixel_line_buf[127][0]     ;
+; pixel_line_buf[127][7]                  ; Merged with pixel_line_buf[127][3]     ;
 ; pixel_line_buf[126][8]                  ; Merged with pixel_line_buf[126][0]     ;
 ; pixel_line_buf[126][7]                  ; Merged with pixel_line_buf[126][3]     ;
 ; pixel_line_buf[125][8]                  ; Merged with pixel_line_buf[125][0]     ;
 ; pixel_line_buf[125][7]                  ; Merged with pixel_line_buf[125][3]     ;
+; pixel_line_buf[124][8]                  ; Merged with pixel_line_buf[124][0]     ;
+; pixel_line_buf[124][7]                  ; Merged with pixel_line_buf[124][3]     ;
+; pixel_line_buf[123][8]                  ; Merged with pixel_line_buf[123][0]     ;
+; pixel_line_buf[123][7]                  ; Merged with pixel_line_buf[123][3]     ;
 ; pixel_line_buf[122][8]                  ; Merged with pixel_line_buf[122][0]     ;
 ; pixel_line_buf[122][7]                  ; Merged with pixel_line_buf[122][3]     ;
 ; pixel_line_buf[121][8]                  ; Merged with pixel_line_buf[121][0]     ;
 ; pixel_line_buf[121][7]                  ; Merged with pixel_line_buf[121][3]     ;
+; pixel_line_buf[120][8]                  ; Merged with pixel_line_buf[120][0]     ;
+; pixel_line_buf[120][7]                  ; Merged with pixel_line_buf[120][3]     ;
+; pixel_line_buf[119][8]                  ; Merged with pixel_line_buf[119][0]     ;
+; pixel_line_buf[119][7]                  ; Merged with pixel_line_buf[119][3]     ;
 ; pixel_line_buf[118][8]                  ; Merged with pixel_line_buf[118][0]     ;
 ; pixel_line_buf[118][7]                  ; Merged with pixel_line_buf[118][3]     ;
 ; pixel_line_buf[117][8]                  ; Merged with pixel_line_buf[117][0]     ;
 ; pixel_line_buf[117][7]                  ; Merged with pixel_line_buf[117][3]     ;
+; pixel_line_buf[116][8]                  ; Merged with pixel_line_buf[116][0]     ;
+; pixel_line_buf[116][7]                  ; Merged with pixel_line_buf[116][3]     ;
+; pixel_line_buf[115][8]                  ; Merged with pixel_line_buf[115][0]     ;
+; pixel_line_buf[115][7]                  ; Merged with pixel_line_buf[115][3]     ;
 ; pixel_line_buf[114][8]                  ; Merged with pixel_line_buf[114][0]     ;
 ; pixel_line_buf[114][7]                  ; Merged with pixel_line_buf[114][3]     ;
 ; pixel_line_buf[113][8]                  ; Merged with pixel_line_buf[113][0]     ;
 ; pixel_line_buf[113][7]                  ; Merged with pixel_line_buf[113][3]     ;
+; pixel_line_buf[112][8]                  ; Merged with pixel_line_buf[112][0]     ;
+; pixel_line_buf[112][7]                  ; Merged with pixel_line_buf[112][3]     ;
+; pixel_line_buf[111][8]                  ; Merged with pixel_line_buf[111][0]     ;
+; pixel_line_buf[111][7]                  ; Merged with pixel_line_buf[111][3]     ;
 ; pixel_line_buf[110][8]                  ; Merged with pixel_line_buf[110][0]     ;
 ; pixel_line_buf[110][7]                  ; Merged with pixel_line_buf[110][3]     ;
 ; pixel_line_buf[109][8]                  ; Merged with pixel_line_buf[109][0]     ;
 ; pixel_line_buf[109][7]                  ; Merged with pixel_line_buf[109][3]     ;
+; pixel_line_buf[108][8]                  ; Merged with pixel_line_buf[108][0]     ;
+; pixel_line_buf[108][7]                  ; Merged with pixel_line_buf[108][3]     ;
+; pixel_line_buf[107][8]                  ; Merged with pixel_line_buf[107][0]     ;
+; pixel_line_buf[107][7]                  ; Merged with pixel_line_buf[107][3]     ;
 ; pixel_line_buf[106][8]                  ; Merged with pixel_line_buf[106][0]     ;
 ; pixel_line_buf[106][7]                  ; Merged with pixel_line_buf[106][3]     ;
 ; pixel_line_buf[105][8]                  ; Merged with pixel_line_buf[105][0]     ;
 ; pixel_line_buf[105][7]                  ; Merged with pixel_line_buf[105][3]     ;
+; pixel_line_buf[104][8]                  ; Merged with pixel_line_buf[104][0]     ;
+; pixel_line_buf[104][7]                  ; Merged with pixel_line_buf[104][3]     ;
+; pixel_line_buf[103][8]                  ; Merged with pixel_line_buf[103][0]     ;
+; pixel_line_buf[103][7]                  ; Merged with pixel_line_buf[103][3]     ;
 ; pixel_line_buf[102][8]                  ; Merged with pixel_line_buf[102][0]     ;
 ; pixel_line_buf[102][7]                  ; Merged with pixel_line_buf[102][3]     ;
 ; pixel_line_buf[101][8]                  ; Merged with pixel_line_buf[101][0]     ;
 ; pixel_line_buf[101][7]                  ; Merged with pixel_line_buf[101][3]     ;
+; pixel_line_buf[100][8]                  ; Merged with pixel_line_buf[100][0]     ;
+; pixel_line_buf[100][7]                  ; Merged with pixel_line_buf[100][3]     ;
+; pixel_line_buf[99][8]                   ; Merged with pixel_line_buf[99][0]      ;
+; pixel_line_buf[99][7]                   ; Merged with pixel_line_buf[99][3]      ;
 ; pixel_line_buf[98][8]                   ; Merged with pixel_line_buf[98][0]      ;
 ; pixel_line_buf[98][7]                   ; Merged with pixel_line_buf[98][3]      ;
 ; pixel_line_buf[97][8]                   ; Merged with pixel_line_buf[97][0]      ;
 ; pixel_line_buf[97][7]                   ; Merged with pixel_line_buf[97][3]      ;
+; pixel_line_buf[96][8]                   ; Merged with pixel_line_buf[96][0]      ;
+; pixel_line_buf[96][7]                   ; Merged with pixel_line_buf[96][3]      ;
+; pixel_line_buf[95][8]                   ; Merged with pixel_line_buf[95][0]      ;
+; pixel_line_buf[95][7]                   ; Merged with pixel_line_buf[95][3]      ;
 ; pixel_line_buf[94][8]                   ; Merged with pixel_line_buf[94][0]      ;
 ; pixel_line_buf[94][7]                   ; Merged with pixel_line_buf[94][3]      ;
 ; pixel_line_buf[93][8]                   ; Merged with pixel_line_buf[93][0]      ;
 ; pixel_line_buf[93][7]                   ; Merged with pixel_line_buf[93][3]      ;
+; pixel_line_buf[92][8]                   ; Merged with pixel_line_buf[92][0]      ;
+; pixel_line_buf[92][7]                   ; Merged with pixel_line_buf[92][3]      ;
+; pixel_line_buf[91][8]                   ; Merged with pixel_line_buf[91][0]      ;
+; pixel_line_buf[91][7]                   ; Merged with pixel_line_buf[91][3]      ;
 ; pixel_line_buf[90][8]                   ; Merged with pixel_line_buf[90][0]      ;
 ; pixel_line_buf[90][7]                   ; Merged with pixel_line_buf[90][3]      ;
 ; pixel_line_buf[89][8]                   ; Merged with pixel_line_buf[89][0]      ;
 ; pixel_line_buf[89][7]                   ; Merged with pixel_line_buf[89][3]      ;
+; pixel_line_buf[88][8]                   ; Merged with pixel_line_buf[88][0]      ;
+; pixel_line_buf[88][7]                   ; Merged with pixel_line_buf[88][3]      ;
+; pixel_line_buf[87][8]                   ; Merged with pixel_line_buf[87][0]      ;
+; pixel_line_buf[87][7]                   ; Merged with pixel_line_buf[87][3]      ;
 ; pixel_line_buf[86][8]                   ; Merged with pixel_line_buf[86][0]      ;
 ; pixel_line_buf[86][7]                   ; Merged with pixel_line_buf[86][3]      ;
 ; pixel_line_buf[85][8]                   ; Merged with pixel_line_buf[85][0]      ;
 ; pixel_line_buf[85][7]                   ; Merged with pixel_line_buf[85][3]      ;
+; pixel_line_buf[84][8]                   ; Merged with pixel_line_buf[84][0]      ;
+; pixel_line_buf[84][7]                   ; Merged with pixel_line_buf[84][3]      ;
+; pixel_line_buf[83][8]                   ; Merged with pixel_line_buf[83][0]      ;
+; pixel_line_buf[83][7]                   ; Merged with pixel_line_buf[83][3]      ;
 ; pixel_line_buf[82][8]                   ; Merged with pixel_line_buf[82][0]      ;
 ; pixel_line_buf[82][7]                   ; Merged with pixel_line_buf[82][3]      ;
 ; pixel_line_buf[81][8]                   ; Merged with pixel_line_buf[81][0]      ;
 ; pixel_line_buf[81][7]                   ; Merged with pixel_line_buf[81][3]      ;
+; pixel_line_buf[80][8]                   ; Merged with pixel_line_buf[80][0]      ;
+; pixel_line_buf[80][7]                   ; Merged with pixel_line_buf[80][3]      ;
+; pixel_line_buf[79][8]                   ; Merged with pixel_line_buf[79][0]      ;
+; pixel_line_buf[79][7]                   ; Merged with pixel_line_buf[79][3]      ;
 ; pixel_line_buf[78][8]                   ; Merged with pixel_line_buf[78][0]      ;
 ; pixel_line_buf[78][7]                   ; Merged with pixel_line_buf[78][3]      ;
 ; pixel_line_buf[77][8]                   ; Merged with pixel_line_buf[77][0]      ;
 ; pixel_line_buf[77][7]                   ; Merged with pixel_line_buf[77][3]      ;
+; pixel_line_buf[76][8]                   ; Merged with pixel_line_buf[76][0]      ;
+; pixel_line_buf[76][7]                   ; Merged with pixel_line_buf[76][3]      ;
+; pixel_line_buf[75][8]                   ; Merged with pixel_line_buf[75][0]      ;
+; pixel_line_buf[75][7]                   ; Merged with pixel_line_buf[75][3]      ;
 ; pixel_line_buf[74][8]                   ; Merged with pixel_line_buf[74][0]      ;
 ; pixel_line_buf[74][7]                   ; Merged with pixel_line_buf[74][3]      ;
 ; pixel_line_buf[73][8]                   ; Merged with pixel_line_buf[73][0]      ;
 ; pixel_line_buf[73][7]                   ; Merged with pixel_line_buf[73][3]      ;
+; pixel_line_buf[72][8]                   ; Merged with pixel_line_buf[72][0]      ;
+; pixel_line_buf[72][7]                   ; Merged with pixel_line_buf[72][3]      ;
+; pixel_line_buf[71][8]                   ; Merged with pixel_line_buf[71][0]      ;
+; pixel_line_buf[71][7]                   ; Merged with pixel_line_buf[71][3]      ;
 ; pixel_line_buf[70][8]                   ; Merged with pixel_line_buf[70][0]      ;
 ; pixel_line_buf[70][7]                   ; Merged with pixel_line_buf[70][3]      ;
 ; pixel_line_buf[69][8]                   ; Merged with pixel_line_buf[69][0]      ;
 ; pixel_line_buf[69][7]                   ; Merged with pixel_line_buf[69][3]      ;
+; pixel_line_buf[68][8]                   ; Merged with pixel_line_buf[68][0]      ;
+; pixel_line_buf[68][7]                   ; Merged with pixel_line_buf[68][3]      ;
+; pixel_line_buf[67][8]                   ; Merged with pixel_line_buf[67][0]      ;
+; pixel_line_buf[67][7]                   ; Merged with pixel_line_buf[67][3]      ;
 ; pixel_line_buf[66][8]                   ; Merged with pixel_line_buf[66][0]      ;
 ; pixel_line_buf[66][7]                   ; Merged with pixel_line_buf[66][3]      ;
 ; pixel_line_buf[65][8]                   ; Merged with pixel_line_buf[65][0]      ;
 ; pixel_line_buf[65][7]                   ; Merged with pixel_line_buf[65][3]      ;
+; pixel_line_buf[64][8]                   ; Merged with pixel_line_buf[64][0]      ;
+; pixel_line_buf[64][7]                   ; Merged with pixel_line_buf[64][3]      ;
+; pixel_line_buf[63][8]                   ; Merged with pixel_line_buf[63][0]      ;
+; pixel_line_buf[63][7]                   ; Merged with pixel_line_buf[63][3]      ;
 ; pixel_line_buf[62][8]                   ; Merged with pixel_line_buf[62][0]      ;
 ; pixel_line_buf[62][7]                   ; Merged with pixel_line_buf[62][3]      ;
 ; pixel_line_buf[61][8]                   ; Merged with pixel_line_buf[61][0]      ;
 ; pixel_line_buf[61][7]                   ; Merged with pixel_line_buf[61][3]      ;
+; pixel_line_buf[60][8]                   ; Merged with pixel_line_buf[60][0]      ;
+; pixel_line_buf[60][7]                   ; Merged with pixel_line_buf[60][3]      ;
+; pixel_line_buf[59][8]                   ; Merged with pixel_line_buf[59][0]      ;
+; pixel_line_buf[59][7]                   ; Merged with pixel_line_buf[59][3]      ;
 ; pixel_line_buf[58][8]                   ; Merged with pixel_line_buf[58][0]      ;
 ; pixel_line_buf[58][7]                   ; Merged with pixel_line_buf[58][3]      ;
 ; pixel_line_buf[57][8]                   ; Merged with pixel_line_buf[57][0]      ;
 ; pixel_line_buf[57][7]                   ; Merged with pixel_line_buf[57][3]      ;
+; pixel_line_buf[56][8]                   ; Merged with pixel_line_buf[56][0]      ;
+; pixel_line_buf[56][7]                   ; Merged with pixel_line_buf[56][3]      ;
+; pixel_line_buf[55][8]                   ; Merged with pixel_line_buf[55][0]      ;
+; pixel_line_buf[55][7]                   ; Merged with pixel_line_buf[55][3]      ;
 ; pixel_line_buf[54][8]                   ; Merged with pixel_line_buf[54][0]      ;
 ; pixel_line_buf[54][7]                   ; Merged with pixel_line_buf[54][3]      ;
 ; pixel_line_buf[53][8]                   ; Merged with pixel_line_buf[53][0]      ;
 ; pixel_line_buf[53][7]                   ; Merged with pixel_line_buf[53][3]      ;
+; pixel_line_buf[52][8]                   ; Merged with pixel_line_buf[52][0]      ;
+; pixel_line_buf[52][7]                   ; Merged with pixel_line_buf[52][3]      ;
+; pixel_line_buf[51][8]                   ; Merged with pixel_line_buf[51][0]      ;
+; pixel_line_buf[51][7]                   ; Merged with pixel_line_buf[51][3]      ;
 ; pixel_line_buf[50][8]                   ; Merged with pixel_line_buf[50][0]      ;
 ; pixel_line_buf[50][7]                   ; Merged with pixel_line_buf[50][3]      ;
 ; pixel_line_buf[49][8]                   ; Merged with pixel_line_buf[49][0]      ;
 ; pixel_line_buf[49][7]                   ; Merged with pixel_line_buf[49][3]      ;
+; pixel_line_buf[48][8]                   ; Merged with pixel_line_buf[48][0]      ;
+; pixel_line_buf[48][7]                   ; Merged with pixel_line_buf[48][3]      ;
+; pixel_line_buf[47][8]                   ; Merged with pixel_line_buf[47][0]      ;
+; pixel_line_buf[47][7]                   ; Merged with pixel_line_buf[47][3]      ;
 ; pixel_line_buf[46][8]                   ; Merged with pixel_line_buf[46][0]      ;
 ; pixel_line_buf[46][7]                   ; Merged with pixel_line_buf[46][3]      ;
 ; pixel_line_buf[45][8]                   ; Merged with pixel_line_buf[45][0]      ;
 ; pixel_line_buf[45][7]                   ; Merged with pixel_line_buf[45][3]      ;
+; pixel_line_buf[44][8]                   ; Merged with pixel_line_buf[44][0]      ;
+; pixel_line_buf[44][7]                   ; Merged with pixel_line_buf[44][3]      ;
+; pixel_line_buf[43][8]                   ; Merged with pixel_line_buf[43][0]      ;
+; pixel_line_buf[43][7]                   ; Merged with pixel_line_buf[43][3]      ;
 ; pixel_line_buf[42][8]                   ; Merged with pixel_line_buf[42][0]      ;
 ; pixel_line_buf[42][7]                   ; Merged with pixel_line_buf[42][3]      ;
 ; pixel_line_buf[41][8]                   ; Merged with pixel_line_buf[41][0]      ;
 ; pixel_line_buf[41][7]                   ; Merged with pixel_line_buf[41][3]      ;
+; pixel_line_buf[40][8]                   ; Merged with pixel_line_buf[40][0]      ;
+; pixel_line_buf[40][7]                   ; Merged with pixel_line_buf[40][3]      ;
+; pixel_line_buf[39][8]                   ; Merged with pixel_line_buf[39][0]      ;
+; pixel_line_buf[39][7]                   ; Merged with pixel_line_buf[39][3]      ;
 ; pixel_line_buf[38][8]                   ; Merged with pixel_line_buf[38][0]      ;
 ; pixel_line_buf[38][7]                   ; Merged with pixel_line_buf[38][3]      ;
 ; pixel_line_buf[37][8]                   ; Merged with pixel_line_buf[37][0]      ;
 ; pixel_line_buf[37][7]                   ; Merged with pixel_line_buf[37][3]      ;
+; pixel_line_buf[36][8]                   ; Merged with pixel_line_buf[36][0]      ;
+; pixel_line_buf[36][7]                   ; Merged with pixel_line_buf[36][3]      ;
+; pixel_line_buf[35][8]                   ; Merged with pixel_line_buf[35][0]      ;
+; pixel_line_buf[35][7]                   ; Merged with pixel_line_buf[35][3]      ;
 ; pixel_line_buf[34][8]                   ; Merged with pixel_line_buf[34][0]      ;
 ; pixel_line_buf[34][7]                   ; Merged with pixel_line_buf[34][3]      ;
 ; pixel_line_buf[33][8]                   ; Merged with pixel_line_buf[33][0]      ;
 ; pixel_line_buf[33][7]                   ; Merged with pixel_line_buf[33][3]      ;
+; pixel_line_buf[32][8]                   ; Merged with pixel_line_buf[32][0]      ;
+; pixel_line_buf[32][7]                   ; Merged with pixel_line_buf[32][3]      ;
+; pixel_line_buf[31][8]                   ; Merged with pixel_line_buf[31][0]      ;
+; pixel_line_buf[31][7]                   ; Merged with pixel_line_buf[31][3]      ;
 ; pixel_line_buf[30][8]                   ; Merged with pixel_line_buf[30][0]      ;
 ; pixel_line_buf[30][7]                   ; Merged with pixel_line_buf[30][3]      ;
 ; pixel_line_buf[29][8]                   ; Merged with pixel_line_buf[29][0]      ;
 ; pixel_line_buf[29][7]                   ; Merged with pixel_line_buf[29][3]      ;
+; pixel_line_buf[28][8]                   ; Merged with pixel_line_buf[28][0]      ;
+; pixel_line_buf[28][7]                   ; Merged with pixel_line_buf[28][3]      ;
+; pixel_line_buf[27][8]                   ; Merged with pixel_line_buf[27][0]      ;
+; pixel_line_buf[27][7]                   ; Merged with pixel_line_buf[27][3]      ;
 ; pixel_line_buf[26][8]                   ; Merged with pixel_line_buf[26][0]      ;
 ; pixel_line_buf[26][7]                   ; Merged with pixel_line_buf[26][3]      ;
 ; pixel_line_buf[25][8]                   ; Merged with pixel_line_buf[25][0]      ;
 ; pixel_line_buf[25][7]                   ; Merged with pixel_line_buf[25][3]      ;
+; pixel_line_buf[24][8]                   ; Merged with pixel_line_buf[24][0]      ;
+; pixel_line_buf[24][7]                   ; Merged with pixel_line_buf[24][3]      ;
+; pixel_line_buf[23][8]                   ; Merged with pixel_line_buf[23][0]      ;
+; pixel_line_buf[23][7]                   ; Merged with pixel_line_buf[23][3]      ;
 ; pixel_line_buf[22][8]                   ; Merged with pixel_line_buf[22][0]      ;
 ; pixel_line_buf[22][7]                   ; Merged with pixel_line_buf[22][3]      ;
 ; pixel_line_buf[21][8]                   ; Merged with pixel_line_buf[21][0]      ;
 ; pixel_line_buf[21][7]                   ; Merged with pixel_line_buf[21][3]      ;
+; pixel_line_buf[20][8]                   ; Merged with pixel_line_buf[20][0]      ;
+; pixel_line_buf[20][7]                   ; Merged with pixel_line_buf[20][3]      ;
+; pixel_line_buf[19][8]                   ; Merged with pixel_line_buf[19][0]      ;
+; pixel_line_buf[19][7]                   ; Merged with pixel_line_buf[19][3]      ;
 ; pixel_line_buf[18][8]                   ; Merged with pixel_line_buf[18][0]      ;
 ; pixel_line_buf[18][7]                   ; Merged with pixel_line_buf[18][3]      ;
 ; pixel_line_buf[17][8]                   ; Merged with pixel_line_buf[17][0]      ;
 ; pixel_line_buf[17][7]                   ; Merged with pixel_line_buf[17][3]      ;
+; pixel_line_buf[16][8]                   ; Merged with pixel_line_buf[16][0]      ;
+; pixel_line_buf[16][7]                   ; Merged with pixel_line_buf[16][3]      ;
+; pixel_line_buf[15][8]                   ; Merged with pixel_line_buf[15][0]      ;
+; pixel_line_buf[15][7]                   ; Merged with pixel_line_buf[15][3]      ;
 ; pixel_line_buf[14][8]                   ; Merged with pixel_line_buf[14][0]      ;
 ; pixel_line_buf[14][7]                   ; Merged with pixel_line_buf[14][3]      ;
 ; pixel_line_buf[13][8]                   ; Merged with pixel_line_buf[13][0]      ;
 ; pixel_line_buf[13][7]                   ; Merged with pixel_line_buf[13][3]      ;
+; pixel_line_buf[12][8]                   ; Merged with pixel_line_buf[12][0]      ;
+; pixel_line_buf[12][7]                   ; Merged with pixel_line_buf[12][3]      ;
+; pixel_line_buf[11][8]                   ; Merged with pixel_line_buf[11][0]      ;
+; pixel_line_buf[11][7]                   ; Merged with pixel_line_buf[11][3]      ;
 ; pixel_line_buf[10][8]                   ; Merged with pixel_line_buf[10][0]      ;
 ; pixel_line_buf[10][7]                   ; Merged with pixel_line_buf[10][3]      ;
 ; pixel_line_buf[9][8]                    ; Merged with pixel_line_buf[9][0]       ;
 ; pixel_line_buf[9][7]                    ; Merged with pixel_line_buf[9][3]       ;
+; pixel_line_buf[8][8]                    ; Merged with pixel_line_buf[8][0]       ;
+; pixel_line_buf[8][7]                    ; Merged with pixel_line_buf[8][3]       ;
+; pixel_line_buf[7][8]                    ; Merged with pixel_line_buf[7][0]       ;
+; pixel_line_buf[7][7]                    ; Merged with pixel_line_buf[7][3]       ;
 ; pixel_line_buf[6][8]                    ; Merged with pixel_line_buf[6][0]       ;
 ; pixel_line_buf[6][7]                    ; Merged with pixel_line_buf[6][3]       ;
 ; pixel_line_buf[5][8]                    ; Merged with pixel_line_buf[5][0]       ;
 ; pixel_line_buf[5][7]                    ; Merged with pixel_line_buf[5][3]       ;
+; pixel_line_buf[4][8]                    ; Merged with pixel_line_buf[4][0]       ;
+; pixel_line_buf[4][7]                    ; Merged with pixel_line_buf[4][3]       ;
+; pixel_line_buf[3][8]                    ; Merged with pixel_line_buf[3][0]       ;
+; pixel_line_buf[3][7]                    ; Merged with pixel_line_buf[3][3]       ;
 ; pixel_line_buf[2][8]                    ; Merged with pixel_line_buf[2][0]       ;
 ; pixel_line_buf[2][7]                    ; Merged with pixel_line_buf[2][3]       ;
 ; pixel_line_buf[1][8]                    ; Merged with pixel_line_buf[1][0]       ;
 ; pixel_line_buf[1][7]                    ; Merged with pixel_line_buf[1][3]       ;
+; pixel_line_buf[0][8]                    ; Merged with pixel_line_buf[0][0]       ;
+; pixel_line_buf[0][7]                    ; Merged with pixel_line_buf[0][3]       ;
 ; GB_color_00[10]                         ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 386 ;                                        ;
+; Total Number of Removed Registers = 369 ;                                        ;
 +-----------------------------------------+----------------------------------------+
 
 
@@ -661,12 +647,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1736  ;
-; Number of registers using Synchronous Clear  ; 21    ;
+; Total registers                              ; 2110  ;
+; Number of registers using Synchronous Clear  ; 56    ;
 ; Number of registers using Synchronous Load   ; 330   ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 578   ;
+; Number of registers using Clock Enable       ; 925   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -682,20 +668,23 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|cnt160[4]      ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|X_cntpix[0]    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|GB_color_00[0] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|Y_cntpix[1]    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|cntmem[2]      ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|write_addr[11] ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|cnt144[6]      ;
-; 265:1              ; 10 bits   ; 1760 LEs      ; 1120 LEs             ; 640 LEs                ; Yes        ; |DE0_GameBoy_DMG01|pixel_color[4] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|cnt160[0]        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|X_cntpix[1]      ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|GB_color_00[1]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|GB_Vcnt[1]       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|GB_Hcnt[5]       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|Y_cntpix[3]      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|cntmem[6]        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|read_addr[5]     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|cnt144[5]        ;
+; 40:1               ; 8 bits    ; 208 LEs       ; 208 LEs              ; 0 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|disp_mem_data[2] ;
+; 265:1              ; 10 bits   ; 1760 LEs      ; 1120 LEs             ; 640 LEs                ; Yes        ; |DE0_GameBoy_DMG01|pixel_color[0]   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -1300,7 +1289,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:15     ;
+; Top            ; 00:00:22     ;
 +----------------+--------------+
 
 
@@ -1310,7 +1299,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Mar 03 23:51:36 2015
+    Info: Processing started: Wed Mar 04 21:52:37 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_GameBoy_DMG01 -c DE0_GameBoy_DMG01
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file screenshot_ram.v
@@ -1324,11 +1313,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file de0_vga
 Info (12021): Found 1 design units, including 1 entities, in source file de0_gameboy_dmg01.v
     Info (12023): Found entity 1: DE0_GameBoy_DMG01
 Info (12127): Elaborating entity "DE0_GameBoy_DMG01" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(206): truncated value with size 32 to match size of target (13)
-Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(207): truncated value with size 32 to match size of target (13)
-Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(209): truncated value with size 32 to match size of target (13)
-Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(284): truncated value with size 32 to match size of target (13)
-Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(285): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(143): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(144): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(145): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(247): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(248): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at DE0_GameBoy_DMG01.v(323): truncated value with size 32 to match size of target (13)
 Info (12128): Elaborating entity "DE0_VGA" for hierarchy "DE0_VGA:VGA_Driver"
 Warning (10230): Verilog HDL assignment warning at DE0_VGA.v(45): truncated value with size 32 to match size of target (11)
 Warning (10230): Verilog HDL assignment warning at DE0_VGA.v(46): truncated value with size 32 to match size of target (11)
@@ -1440,7 +1430,8 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 13 input pin(s) that do not drive logic
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "INPUT_SWS[2]"
     Warning (15610): No output dependent on input pin "INPUT_SWS[3]"
     Warning (15610): No output dependent on input pin "INPUT_SWS[4]"
     Warning (15610): No output dependent on input pin "INPUT_SWS[5]"
@@ -1451,19 +1442,16 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "INPUT_BTN[0]"
     Warning (15610): No output dependent on input pin "INPUT_BTN[1]"
     Warning (15610): No output dependent on input pin "INPUT_BTN[2]"
-    Warning (15610): No output dependent on input pin "GB_VSync[0]"
-    Warning (15610): No output dependent on input pin "GB_PClk[0]"
-    Warning (15610): No output dependent on input pin "GB_HSync[0]"
-Info (21057): Implemented 3650 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4488 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 19 output pins
-    Info (21061): Implemented 3603 logic cells
+    Info (21061): Implemented 4441 logic cells
     Info (21064): Implemented 8 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 38 warnings
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 37 warnings
     Info: Peak virtual memory: 420 megabytes
-    Info: Processing ended: Tue Mar 03 23:51:57 2015
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Processing ended: Wed Mar 04 21:53:05 2015
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:27
 
 
