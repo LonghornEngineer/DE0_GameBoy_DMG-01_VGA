@@ -45,7 +45,7 @@ output	reg	[0:0]		VGA_VS;
 			reg	[7:0]		cnt144;
 			reg	[7:0]		mem144;
 			
-			reg	[12:0]	cntmem;
+			reg	[12:0]	rcntmem;
 			
 			reg	[3:0]		Y_cntpix;
 			reg	[3:0]		X_cntpix;
@@ -77,7 +77,7 @@ input		wire	[0:0]		GB_HSync;
 			reg	[159:0]	GB_Hbuff1;
 			
 			reg	[12:0]	wcntmem;
-			reg	[7:0]		wbuffcnt;
+			reg	[0:0]		safe;
 			
 initial
 	begin
@@ -93,7 +93,7 @@ initial
 		cnt160			<= 0;	
 		cnt144			<= 0;
 		mem144			<= 0;
-		cntmem			<= 0;
+		rcntmem			<= 0;
 		wcntmem			<= 0;
 		Y_cntpix			<= 0;
 		X_cntpix			<= 0;
@@ -103,53 +103,107 @@ initial
 		GB_color_10		<= 0;
 		GB_color_11		<= 0;
 		
-		OEA				<= 0;
+		OEA				<= 1;
 		OEB				<= 1;
 		OEC				<= 1;
-		OED				<= 1;
+		OED				<= 0;
 		
 		DIRA				<= 0;
 		
+		safe				<= 0;
+		
+		GB_Hbuff0		<= 160'b1010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010;
+		GB_Hbuff1		<= 160'b1001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001;
+		
 	end
 	
-always @(posedge GB_PClk)
-	begin
-		if(GB_VSync == 1)
-			begin
-				GB_Vcnt <= 0;
-				GB_Hcnt <= 0;
-			end
-		else
-			begin
-				if(GB_HSync == 1)
-					begin
-						GB_Vcnt <= GB_Vcnt + 1'b1;
-						GB_Hcnt <= 0;
-					end
-				else
-					begin
-						GB_Hbuff0[GB_Hcnt] <= !GB_Data0;
-						GB_Hbuff1[GB_Hcnt] <= !GB_Data1;
-						GB_Hcnt <= GB_Hcnt + 1'b1;
-					end
-			end
-	end
+always @(negedge GB_PClk)
+		begin
+			if(GB_VSync == 1)
+				begin
+					
+					if(GB_HSync == 1)
+						begin
+							safe <= 0;
+							GB_Vcnt <= 0;
+							GB_Hbuff0[GB_Hcnt] <= !GB_Data0;
+							GB_Hbuff1[GB_Hcnt] <= !GB_Data1;
+							GB_Hcnt <= GB_Hcnt + 1'b1;
+						end
+					else
+						begin
+							if (GB_Hcnt == 159)
+								begin
+									GB_Hbuff0[GB_Hcnt] <= !GB_Data0;
+									GB_Hbuff1[GB_Hcnt] <= !GB_Data1;
+									GB_Hcnt <= 0;
+									safe <= 1;								
+								end
+							else if(safe == 0)
+								begin
+									GB_Hbuff0[GB_Hcnt] <= !GB_Data0;
+									GB_Hbuff1[GB_Hcnt] <= !GB_Data1;
+									GB_Hcnt <= GB_Hcnt + 1'b1;
+								end
+						end
+				end
+			else
+				begin
+					if(GB_HSync == 1)
+						begin
+							safe <= 0;
+							GB_Hbuff0[GB_Hcnt] <= !GB_Data0;
+							GB_Hbuff1[GB_Hcnt] <= !GB_Data1;
+							GB_Hcnt <= GB_Hcnt + 1'b1;
+						end
+					else
+						begin
+							if (GB_Hcnt == 159)
+								begin
+									GB_Hbuff0[GB_Hcnt] <= !GB_Data0;
+									GB_Hbuff1[GB_Hcnt] <= !GB_Data1;
+									GB_Hcnt <= 0;
+									safe <= 1;								
+								end
+							else if (GB_Hcnt == 150)
+								begin
+									GB_Hbuff0[GB_Hcnt] <= !GB_Data0;
+									GB_Hbuff1[GB_Hcnt] <= !GB_Data1;
+									GB_Hcnt <= GB_Hcnt + 1'b1;
+									GB_Vcnt <= GB_Vcnt + 1'b1;								
+								end
+							else if(safe == 0)
+								begin
+									GB_Hbuff0[GB_Hcnt] <= !GB_Data0;
+									GB_Hbuff1[GB_Hcnt] <= !GB_Data1;
+									GB_Hcnt <= GB_Hcnt + 1'b1;
+								end
+						end
+				end
+		end
 
-always @(posedge pixel_clk)
+always @(negedge pixel_clk)
 	begin
-		if(GB_HSync == 1 && wcntmem < 160 && H_visible == 1)
+		if(safe == 1 && wcntmem >= 40 && H_visible == 0)
+			begin
+				disp_mem_wren <= 0;
+				wcntmem <= wcntmem;
+				write_addr <= wcntmem + (GB_Vcnt*13'd40);
+				disp_mem_data <= {GB_Hbuff0[(wcntmem*4)], GB_Hbuff1[(wcntmem*4)], GB_Hbuff0[(wcntmem*4)+1], GB_Hbuff1[(wcntmem*4)+1], GB_Hbuff0[(wcntmem*4)+2], GB_Hbuff1[(wcntmem*4)+2], GB_Hbuff0[(wcntmem*4)+3], GB_Hbuff1[(wcntmem*4)+3]};
+			end
+		else if(safe == 1 && wcntmem <= 39 && H_visible == 0)
 			begin
 				disp_mem_wren <= 1;
-				wcntmem <= wcntmem + 1;
-				write_addr <= wcntmem + (GB_Vcnt*40);
-				wbuffcnt <= wbuffcnt + 4;
-				disp_mem_data <= {GB_Hbuff0[wbuffcnt], GB_Hbuff1[wbuffcnt], GB_Hbuff0[wbuffcnt+1], GB_Hbuff1[wbuffcnt+1], GB_Hbuff0[wbuffcnt+2], GB_Hbuff1[wbuffcnt+2], GB_Hbuff0[wbuffcnt+3], GB_Hbuff1[wbuffcnt+3]};
+				wcntmem <= wcntmem + 1'b1;
+				write_addr <= wcntmem + (GB_Vcnt*13'd40);
+				disp_mem_data <= {GB_Hbuff0[wcntmem*4], GB_Hbuff1[(wcntmem*4)], GB_Hbuff0[(wcntmem*4)+1], GB_Hbuff1[(wcntmem*4)+1], GB_Hbuff0[(wcntmem*4)+2], GB_Hbuff1[(wcntmem*4)+2], GB_Hbuff0[(wcntmem*4)+3], GB_Hbuff1[(wcntmem*4)+3]};
 			end
 		else
 			begin
 				disp_mem_wren <= 0;
 				wcntmem <= 0;
-				wbuffcnt <= 0;
+				write_addr <= wcntmem + (GB_Vcnt*13'd40);
+				disp_mem_data <= {GB_Hbuff0[(wcntmem*4)], GB_Hbuff1[(wcntmem*4)], GB_Hbuff0[(wcntmem*4)+1], GB_Hbuff1[(wcntmem*4)+1], GB_Hbuff0[(wcntmem*4)+2], GB_Hbuff1[(wcntmem*4)+2], GB_Hbuff0[(wcntmem*4)+3], GB_Hbuff1[(wcntmem*4)+3]};
 			end
 	end
 	
@@ -236,91 +290,93 @@ always @(posedge pixel_clk)
 	
 always @(posedge pixel_clk)
 	begin
-		if(!H_visible)
+		if(H_blank == 1)
 			begin
-				if(X_pix == 0)
+				if(cnt144 != mem144)
 					begin
 						mem144 <= cnt144;
+						rcntmem <= 0;
 					end
-				if(cntmem < 43)
+				else if(rcntmem <= 42)
 					begin
-						read_addr <= cntmem + (mem144*40);
-						cntmem <= cntmem + 1;	
+						read_addr <= rcntmem + (mem144*13'd40);
+						rcntmem <= rcntmem + 1'b1;	
 
 						if(disp_mem_q[7:6] == 2'b00)
 							begin
-								pixel_line_buf[((cntmem-3)*4)]	<= GB_color_00;
+								pixel_line_buf[((rcntmem-3)*4)]	<= GB_color_00;
 							end
 						else if(disp_mem_q[7:6] == 2'b01)
 							begin
-								pixel_line_buf[((cntmem-3)*4)]	<= GB_color_01;
+								pixel_line_buf[((rcntmem-3)*4)]	<= GB_color_01;
 							end
 						else if(disp_mem_q[7:6] == 2'b10)
 							begin
-								pixel_line_buf[((cntmem-3)*4)]	<= GB_color_10;
+								pixel_line_buf[((rcntmem-3)*4)]	<= GB_color_10;
 							end
 						else
 							begin
-								pixel_line_buf[((cntmem-3)*4)]	<= GB_color_11;
+								pixel_line_buf[((rcntmem-3)*4)]	<= GB_color_11;
 							end
+							
 							
 						if(disp_mem_q[5:4] == 2'b00)
 							begin
-								pixel_line_buf[((cntmem-3)*4)+1]	<= GB_color_00;
+								pixel_line_buf[((rcntmem-3)*4)+1]	<= GB_color_00;
 							end
 						else if(disp_mem_q[5:4] == 2'b01)
 							begin
-								pixel_line_buf[((cntmem-3)*4)+1]	<= GB_color_01;
+								pixel_line_buf[((rcntmem-3)*4)+1]	<= GB_color_01;
 							end
 						else if(disp_mem_q[5:4] == 2'b10)
 							begin
-								pixel_line_buf[((cntmem-3)*4)+1]	<= GB_color_10;
+								pixel_line_buf[((rcntmem-3)*4)+1]	<= GB_color_10;
 							end
 						else
 							begin
-								pixel_line_buf[((cntmem-3)*4)+1]	<= GB_color_11;
+								pixel_line_buf[((rcntmem-3)*4)+1]	<= GB_color_11;
 							end
 							
 						if(disp_mem_q[3:2] == 2'b00)
 							begin
-								pixel_line_buf[((cntmem-3)*4)+2]	<= GB_color_00;
+								pixel_line_buf[((rcntmem-3)*4)+2]	<= GB_color_00;
 							end
 						else if(disp_mem_q[3:2] == 2'b01)
 							begin
-								pixel_line_buf[((cntmem-3)*4)+2]	<= GB_color_01;
+								pixel_line_buf[((rcntmem-3)*4)+2]	<= GB_color_01;
 							end
 						else if(disp_mem_q[3:2] == 2'b10)
 							begin
-								pixel_line_buf[((cntmem-3)*4)+2]	<= GB_color_10;
+								pixel_line_buf[((rcntmem-3)*4)+2]	<= GB_color_10;
 							end
 						else
 							begin
-								pixel_line_buf[((cntmem-3)*4)+2]	<= GB_color_11;
+								pixel_line_buf[((rcntmem-3)*4)+2]	<= GB_color_11;
 							end
 							
 						if(disp_mem_q[1:0] == 2'b00)
 							begin
-								pixel_line_buf[((cntmem-3)*4)+3]	<= GB_color_00;
+								pixel_line_buf[((rcntmem-3)*4)+3]	<= GB_color_00;
 							end
 						else if(disp_mem_q[1:0] == 2'b01)
 							begin
-								pixel_line_buf[((cntmem-3)*4)+3]	<= GB_color_01;
+								pixel_line_buf[((rcntmem-3)*4)+3]	<= GB_color_01;
 							end
 						else if(disp_mem_q[1:0] == 2'b10)
 							begin
-								pixel_line_buf[((cntmem-3)*4)+3]	<= GB_color_10;
+								pixel_line_buf[((rcntmem-3)*4)+3]	<= GB_color_10;
 							end
 						else
 							begin
-								pixel_line_buf[((cntmem-3)*4)+3]	<= GB_color_11;
+								pixel_line_buf[((rcntmem-3)*4)+3]	<= GB_color_11;
 							end
 					end
 			end
 		else
 			begin
-				cntmem <= 0;
+				//rcntmem <= 0;
 
-				read_addr <= ((cnt144+1)*40);	
+				read_addr <= ((mem144+1'b1)*13'd40);	
 			end
 	end
 
