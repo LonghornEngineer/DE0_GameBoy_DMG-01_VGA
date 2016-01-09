@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_GameBoy_DMG01
-Sat Nov 21 01:50:58 2015
+Sat Nov 21 13:47:15 2015
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -17,25 +17,26 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   9. Analysis & Synthesis IP Cores Summary
  10. State Machine - |DE0_GameBoy_DMG01|H_blank
  11. State Machine - |DE0_GameBoy_DMG01|V_blank
- 12. Registers Removed During Synthesis
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for DISP_RAM:RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated
- 17. Source assignments for ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated
- 18. Parameter Settings for User Entity Instance: DE0_VGA:VGA_Driver
- 19. Parameter Settings for User Entity Instance: DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component
- 20. Parameter Settings for User Entity Instance: DISP_RAM:RAM_Driver|altsyncram:altsyncram_component
- 21. Parameter Settings for User Entity Instance: ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component
- 22. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 23. altpll Parameter Settings by Entity Instance
- 24. altsyncram Parameter Settings by Entity Instance
- 25. Port Connectivity Checks: "ScreenShot_RAM:ScreenShot_RAM_Driver"
- 26. Port Connectivity Checks: "DE0_VGA:VGA_Driver"
- 27. SignalTap II Logic Analyzer Settings
- 28. Elapsed Time Per Partition
- 29. Connections to In-System Debugging Instance "auto_signaltap_0"
- 30. Analysis & Synthesis Messages
+ 12. State Machine - |DE0_GameBoy_DMG01|safe
+ 13. Registers Removed During Synthesis
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for DISP_RAM:RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated
+ 18. Source assignments for ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated
+ 19. Parameter Settings for User Entity Instance: DE0_VGA:VGA_Driver
+ 20. Parameter Settings for User Entity Instance: DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component
+ 21. Parameter Settings for User Entity Instance: DISP_RAM:RAM_Driver|altsyncram:altsyncram_component
+ 22. Parameter Settings for User Entity Instance: ScreenShot_RAM:ScreenShot_RAM_Driver|altsyncram:altsyncram_component
+ 23. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 24. altpll Parameter Settings by Entity Instance
+ 25. altsyncram Parameter Settings by Entity Instance
+ 26. Port Connectivity Checks: "ScreenShot_RAM:ScreenShot_RAM_Driver"
+ 27. Port Connectivity Checks: "DE0_VGA:VGA_Driver"
+ 28. SignalTap II Logic Analyzer Settings
+ 29. Elapsed Time Per Partition
+ 30. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 31. Analysis & Synthesis Messages
 
 
 
@@ -61,18 +62,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Nov 21 01:50:58 2015      ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 21 13:47:15 2015      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; DE0_GameBoy_DMG01                          ;
 ; Top-level Entity Name              ; DE0_GameBoy_DMG01                          ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 4,978                                      ;
-;     Total combinational functions  ; 4,641                                      ;
-;     Dedicated logic registers      ; 2,763                                      ;
-; Total registers                    ; 2763                                       ;
+; Total logic elements               ; 5,080                                      ;
+;     Total combinational functions  ; 4,968                                      ;
+;     Dedicated logic registers      ; 2,376                                      ;
+; Total registers                    ; 2376                                       ;
 ; Total pins                         ; 38                                         ;
 ; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 237,568                                    ;
+; Total memory bits                  ; 65,536                                     ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
 ; Total PLLs                         ; 1                                          ;
 +------------------------------------+--------------------------------------------+
@@ -88,6 +89,8 @@ applicable agreement for further details.
 ; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
 ; Verilog Show LMF Mapping Messages                                          ; Off                ;                    ;
 ; Verilog Version                                                            ; SystemVerilog_2005 ; Verilog_2001       ;
+; Optimization Technique                                                     ; Speed              ; Balanced           ;
+; Timing-Driven Synthesis                                                    ; Off                ; On                 ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -118,7 +121,6 @@ applicable agreement for further details.
 ; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
 ; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
 ; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
-; Optimization Technique                                                     ; Balanced           ; Balanced           ;
 ; Carry Chain Length                                                         ; 70                 ; 70                 ;
 ; Auto Carry Chains                                                          ; On                 ; On                 ;
 ; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
@@ -140,7 +142,6 @@ applicable agreement for further details.
 ; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
 ; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
 ; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
 ; Report Parameter Settings                                                  ; On                 ; On                 ;
 ; Report Source Assignments                                                  ; On                 ; On                 ;
 ; Report Connectivity Checks                                                 ; On                 ; On                 ;
@@ -175,12 +176,11 @@ applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ; < 0.1%      ;
-;     Processors 5-8         ;   0.0%      ;
+;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -219,32 +219,6 @@ applicable agreement for further details.
 ; sld_mbpmg.vhd                    ; yes             ; Encrypted Megafunction           ; c:/altera/13.1/quartus/libraries/megafunctions/sld_mbpmg.vhd                                ;         ;
 ; sld_ela_trigger_flow_mgr.vhd     ; yes             ; Encrypted Megafunction           ; c:/altera/13.1/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd                 ;         ;
 ; sld_buffer_manager.vhd           ; yes             ; Encrypted Megafunction           ; c:/altera/13.1/quartus/libraries/megafunctions/sld_buffer_manager.vhd                       ;         ;
-; db/altsyncram_nv14.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/db/altsyncram_nv14.tdf     ;         ;
-; altdpram.tdf                     ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/altdpram.tdf                                 ;         ;
-; memmodes.inc                     ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/others/maxplus2/memmodes.inc                               ;         ;
-; a_hdffe.inc                      ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/a_hdffe.inc                                  ;         ;
-; alt_le_rden_reg.inc              ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/alt_le_rden_reg.inc                          ;         ;
-; altsyncram.inc                   ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/altsyncram.inc                               ;         ;
-; lpm_mux.tdf                      ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mux.tdf                                  ;         ;
-; muxlut.inc                       ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/muxlut.inc                                   ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/bypassff.inc                                 ;         ;
-; altshift.inc                     ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/altshift.inc                                 ;         ;
-; db/mux_mrc.tdf                   ; yes             ; Auto-Generated Megafunction      ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/db/mux_mrc.tdf             ;         ;
-; lpm_decode.tdf                   ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_decode.tdf                               ;         ;
-; declut.inc                       ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/declut.inc                                   ;         ;
-; lpm_compare.inc                  ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_compare.inc                              ;         ;
-; db/decode_4uf.tdf                ; yes             ; Auto-Generated Megafunction      ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/db/decode_4uf.tdf          ;         ;
-; lpm_counter.tdf                  ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_counter.tdf                              ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_add_sub.inc                              ;         ;
-; cmpconst.inc                     ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/cmpconst.inc                                 ;         ;
-; lpm_counter.inc                  ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_counter.inc                              ;         ;
-; alt_counter_stratix.inc          ; yes             ; Megafunction                     ; c:/altera/13.1/quartus/libraries/megafunctions/alt_counter_stratix.inc                      ;         ;
-; db/cntr_ifi.tdf                  ; yes             ; Auto-Generated Megafunction      ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/db/cntr_ifi.tdf            ;         ;
-; db/cmpr_ifc.tdf                  ; yes             ; Auto-Generated Megafunction      ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/db/cmpr_ifc.tdf            ;         ;
-; db/cntr_f8j.tdf                  ; yes             ; Auto-Generated Megafunction      ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/db/cntr_f8j.tdf            ;         ;
-; db/cntr_bfi.tdf                  ; yes             ; Auto-Generated Megafunction      ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/db/cntr_bfi.tdf            ;         ;
-; db/cntr_p1j.tdf                  ; yes             ; Auto-Generated Megafunction      ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/db/cntr_p1j.tdf            ;         ;
-; db/cmpr_efc.tdf                  ; yes             ; Auto-Generated Megafunction      ; C:/Users/Parker/Documents/GitHub/DE0_GameBoy_DMG-01_VGA/Software/db/cmpr_efc.tdf            ;         ;
 ; sld_rom_sr.vhd                   ; yes             ; Encrypted Megafunction           ; c:/altera/13.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                               ;         ;
 ; sld_hub.vhd                      ; yes             ; Encrypted Megafunction           ; c:/altera/13.1/quartus/libraries/megafunctions/sld_hub.vhd                                  ;         ;
 ; sld_jtag_hub.vhd                 ; yes             ; Encrypted Megafunction           ; c:/altera/13.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                             ;         ;
@@ -256,32 +230,32 @@ applicable agreement for further details.
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                    ;
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 4,978                                                                                                                    ;
+; Estimated Total logic elements              ; 5,080                                                                                                                    ;
 ;                                             ;                                                                                                                          ;
-; Total combinational functions               ; 4641                                                                                                                     ;
+; Total combinational functions               ; 4968                                                                                                                     ;
 ; Logic element usage by number of LUT inputs ;                                                                                                                          ;
-;     -- 4 input functions                    ; 3407                                                                                                                     ;
-;     -- 3 input functions                    ; 882                                                                                                                      ;
-;     -- <=2 input functions                  ; 352                                                                                                                      ;
+;     -- 4 input functions                    ; 4212                                                                                                                     ;
+;     -- 3 input functions                    ; 186                                                                                                                      ;
+;     -- <=2 input functions                  ; 570                                                                                                                      ;
 ;                                             ;                                                                                                                          ;
 ; Logic elements by mode                      ;                                                                                                                          ;
-;     -- normal mode                          ; 4394                                                                                                                     ;
-;     -- arithmetic mode                      ; 247                                                                                                                      ;
+;     -- normal mode                          ; 4781                                                                                                                     ;
+;     -- arithmetic mode                      ; 187                                                                                                                      ;
 ;                                             ;                                                                                                                          ;
-; Total registers                             ; 2763                                                                                                                     ;
-;     -- Dedicated logic registers            ; 2763                                                                                                                     ;
+; Total registers                             ; 2376                                                                                                                     ;
+;     -- Dedicated logic registers            ; 2376                                                                                                                     ;
 ;     -- I/O registers                        ; 0                                                                                                                        ;
 ;                                             ;                                                                                                                          ;
 ; I/O pins                                    ; 38                                                                                                                       ;
-; Total memory bits                           ; 237568                                                                                                                   ;
+; Total memory bits                           ; 65536                                                                                                                    ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                                                                        ;
 ; Total PLLs                                  ; 1                                                                                                                        ;
 ;     -- PLLs                                 ; 1                                                                                                                        ;
 ;                                             ;                                                                                                                          ;
 ; Maximum fan-out node                        ; DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll2:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 2096                                                                                                                     ;
-; Total fan-out                               ; 24350                                                                                                                    ;
-; Average fan-out                             ; 3.24                                                                                                                     ;
+; Maximum fan-out                             ; 1826                                                                                                                     ;
+; Total fan-out                               ; 24461                                                                                                                    ;
+; Average fan-out                             ; 3.29                                                                                                                     ;
 +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -290,7 +264,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                    ; Library Name ;
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE0_GameBoy_DMG01                                                                                      ; 4641 (4031)       ; 2763 (2068)  ; 237568      ; 0            ; 0       ; 0         ; 38   ; 0            ; |DE0_GameBoy_DMG01                                                                                                                                                                                                                                                                                                                                     ; work         ;
+; |DE0_GameBoy_DMG01                                                                                      ; 4968 (4581)       ; 2376 (2069)  ; 65536       ; 0            ; 0       ; 0         ; 38   ; 0            ; |DE0_GameBoy_DMG01                                                                                                                                                                                                                                                                                                                                     ; work         ;
 ;    |DE0_VGA:VGA_Driver|                                                                                 ; 88 (88)           ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DE0_VGA:VGA_Driver                                                                                                                                                                                                                                                                                                                  ; work         ;
 ;       |PLL_PIXEL_CLK:pll_inst0|                                                                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0                                                                                                                                                                                                                                                                                          ; work         ;
 ;          |altpll:altpll_component|                                                                      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component                                                                                                                                                                                                                                                                  ; work         ;
@@ -298,25 +272,18 @@ applicable agreement for further details.
 ;    |DISP_RAM:RAM_Driver|                                                                                ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DISP_RAM:RAM_Driver                                                                                                                                                                                                                                                                                                                 ; work         ;
 ;       |altsyncram:altsyncram_component|                                                                 ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DISP_RAM:RAM_Driver|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                 ; work         ;
 ;          |altsyncram_mgq1:auto_generated|                                                               ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|DISP_RAM:RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated                                                                                                                                                                                                                                                  ; work         ;
-;    |sld_hub:auto_hub|                                                                                   ; 120 (1)           ; 90 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                    ; work         ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 119 (81)          ; 90 (62)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                       ; work         ;
-;          |sld_rom_sr:hub_info_reg|                                                                      ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                               ; work         ;
+;    |sld_hub:auto_hub|                                                                                   ; 124 (1)           ; 90 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                    ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 123 (84)          ; 90 (62)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                       ; work         ;
+;          |sld_rom_sr:hub_info_reg|                                                                      ; 22 (22)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                               ; work         ;
 ;          |sld_shadow_jsm:shadow_jsm|                                                                    ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                                                                                                                                                                                             ; work         ;
-;    |sld_signaltap:auto_signaltap_0|                                                                     ; 402 (1)           ; 567 (30)     ; 172032      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                      ; work         ;
-;       |sld_signaltap_impl:sld_signaltap_body|                                                           ; 401 (0)           ; 537 (0)      ; 172032      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body                                                                                                                                                                                                                                                                ; work         ;
-;          |sld_signaltap_implb:sld_signaltap_body|                                                       ; 401 (88)          ; 537 (170)    ; 172032      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body                                                                                                                                                                                                                         ; work         ;
-;             |altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|                            ; 29 (0)            ; 82 (82)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem                                                                                                                                                          ; work         ;
-;                |lpm_decode:wdecoder|                                                                    ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder                                                                                                                                      ; work         ;
-;                   |decode_4uf:auto_generated|                                                           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder|decode_4uf:auto_generated                                                                                                            ; work         ;
-;                |lpm_mux:mux|                                                                            ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux                                                                                                                                              ; work         ;
-;                   |mux_mrc:auto_generated|                                                              ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux|mux_mrc:auto_generated                                                                                                                       ; work         ;
-;             |altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|                                           ; 0 (0)             ; 0 (0)        ; 172032      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram                                                                                                                                                                         ; work         ;
-;                |altsyncram_nv14:auto_generated|                                                         ; 0 (0)             ; 0 (0)        ; 172032      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_nv14:auto_generated                                                                                                                                          ; work         ;
-;             |lpm_shiftreg:segment_offset_config_deserialize|                                            ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:segment_offset_config_deserialize                                                                                                                                                                          ; work         ;
+;    |sld_signaltap:auto_signaltap_0|                                                                     ; 175 (0)           ; 179 (10)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                      ; work         ;
+;       |sld_signaltap_impl:sld_signaltap_body|                                                           ; 175 (0)           ; 169 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body                                                                                                                                                                                                                                                                ; work         ;
+;          |sld_signaltap_implb:sld_signaltap_body|                                                       ; 175 (87)          ; 169 (59)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body                                                                                                                                                                                                                         ; work         ;
+;             |lpm_shiftreg:segment_offset_config_deserialize|                                            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:segment_offset_config_deserialize                                                                                                                                                                          ; work         ;
 ;             |lpm_shiftreg:status_register|                                                              ; 17 (17)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:status_register                                                                                                                                                                                            ; work         ;
 ;             |serial_crc_16:\tdo_crc_gen:tdo_crc_calc|                                                   ; 14 (14)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc                                                                                                                                                                                 ; work         ;
-;             |sld_buffer_manager:sld_buffer_manager_inst|                                                ; 98 (98)           ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst                                                                                                                                                                              ; work         ;
-;             |sld_ela_control:ela_control|                                                               ; 23 (1)            ; 61 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control                                                                                                                                                                                             ; work         ;
+;             |sld_buffer_manager:sld_buffer_manager_inst|                                                ; 14 (14)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst                                                                                                                                                                              ; work         ;
+;             |sld_ela_control:ela_control|                                                               ; 24 (1)            ; 61 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control                                                                                                                                                                                             ; work         ;
 ;                |lpm_shiftreg:trigger_config_deserialize|                                                ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|lpm_shiftreg:trigger_config_deserialize                                                                                                                                                     ; work         ;
 ;                |sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm| ; 18 (0)            ; 45 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm                                                                                                      ; work         ;
 ;                   |lpm_shiftreg:trigger_condition_deserialize|                                          ; 0 (0)             ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|lpm_shiftreg:trigger_condition_deserialize                                                           ; work         ;
@@ -330,33 +297,20 @@ applicable agreement for further details.
 ;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:6:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:6:sm1 ; work         ;
 ;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:7:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:7:sm1 ; work         ;
 ;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:8:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:8:sm1 ; work         ;
-;                |sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|                          ; 4 (4)             ; 11 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity                                                                                                                               ; work         ;
+;                |sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|                          ; 5 (5)             ; 11 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity                                                                                                                               ; work         ;
 ;                   |lpm_shiftreg:trigger_config_deserialize|                                             ; 0 (0)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|lpm_shiftreg:trigger_config_deserialize                                                                                       ; work         ;
-;             |sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|          ; 115 (10)          ; 99 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst                                                                                                                                        ; work         ;
-;                |lpm_counter:\adv_point_3_and_more:advance_pointer_counter|                              ; 7 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter                                                                              ; work         ;
-;                   |cntr_ifi:auto_generated|                                                             ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter|cntr_ifi:auto_generated                                                      ; work         ;
-;                |lpm_counter:read_pointer_counter|                                                       ; 13 (0)            ; 13 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter                                                                                                       ; work         ;
-;                   |cntr_f8j:auto_generated|                                                             ; 13 (13)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter|cntr_f8j:auto_generated                                                                               ; work         ;
-;                |lpm_counter:status_advance_pointer_counter|                                             ; 7 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter                                                                                             ; work         ;
-;                   |cntr_bfi:auto_generated|                                                             ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter|cntr_bfi:auto_generated                                                                     ; work         ;
-;                |lpm_counter:status_read_pointer_counter|                                                ; 3 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter                                                                                                ; work         ;
-;                   |cntr_p1j:auto_generated|                                                             ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter|cntr_p1j:auto_generated                                                                        ; work         ;
-;                |lpm_shiftreg:info_data_shift_out|                                                       ; 27 (27)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:info_data_shift_out                                                                                                       ; work         ;
-;                |lpm_shiftreg:ram_data_shift_out|                                                        ; 21 (21)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                        ; work         ;
-;                |lpm_shiftreg:status_data_shift_out|                                                     ; 27 (27)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                     ; work         ;
-;             |sld_rom_sr:crc_rom_sr|                                                                     ; 17 (17)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                   ; work         ;
+;             |sld_rom_sr:crc_rom_sr|                                                                     ; 19 (19)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_GameBoy_DMG01|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                   ; work         ;
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                                             ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+-----------------------+
-; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                   ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+-----------------------+
-; DISP_RAM:RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated|ALTSYNCRAM                                                                                                         ; AUTO ; Simple Dual Port ; 8192         ; 8            ; 8192         ; 8            ; 65536  ; DE0_GameBoy_DMG01.mif ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_nv14:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 8192         ; 21           ; 8192         ; 21           ; 172032 ; None                  ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+-----------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                    ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------------------+
+; Name                                                                                          ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                   ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------------------+
+; DISP_RAM:RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 8192         ; 8            ; 8192         ; 8            ; 65536 ; DE0_GameBoy_DMG01.mif ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-----------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -390,6 +344,17 @@ Encoding Type:  One-Hot
 ; V_blank.0 ; 0                              ;
 ; V_blank.1 ; 1                              ;
 +-----------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------+
+; State Machine - |DE0_GameBoy_DMG01|safe ;
++--------+--------------------------------+
+; Name   ; safe.1                         ;
++--------+--------------------------------+
+; safe.0 ; 0                              ;
+; safe.1 ; 1                              ;
++--------+--------------------------------+
 
 
 +----------------------------------------------------------------------------------+
@@ -742,12 +707,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2763  ;
+; Total registers                              ; 2376  ;
 ; Number of registers using Synchronous Clear  ; 90    ;
-; Number of registers using Synchronous Load   ; 76    ;
-; Number of registers using Asynchronous Clear ; 244   ;
+; Number of registers using Synchronous Load   ; 52    ;
+; Number of registers using Asynchronous Clear ; 93    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 481   ;
+; Number of registers using Clock Enable       ; 636   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -759,86 +724,46 @@ Encoding Type:  One-Hot
 +-------------------------------------------+---------+
 ; DE0_VGA:VGA_Driver|VGA_HS[0]              ; 2       ;
 ; DE0_VGA:VGA_Driver|VGA_VS[0]              ; 3       ;
-; GB_Hbuff0[101]                            ; 2       ;
-; GB_Hbuff0[105]                            ; 2       ;
-; GB_Hbuff0[97]                             ; 2       ;
-; GB_Hbuff0[109]                            ; 2       ;
-; GB_Hbuff0[89]                             ; 2       ;
 ; GB_Hbuff0[85]                             ; 2       ;
+; GB_Hbuff0[89]                             ; 2       ;
 ; GB_Hbuff0[81]                             ; 2       ;
 ; GB_Hbuff0[93]                             ; 2       ;
-; GB_Hbuff0[69]                             ; 2       ;
+; GB_Hbuff0[105]                            ; 2       ;
+; GB_Hbuff0[101]                            ; 2       ;
+; GB_Hbuff0[97]                             ; 2       ;
+; GB_Hbuff0[109]                            ; 2       ;
 ; GB_Hbuff0[73]                             ; 2       ;
+; GB_Hbuff0[69]                             ; 2       ;
 ; GB_Hbuff0[65]                             ; 2       ;
 ; GB_Hbuff0[77]                             ; 2       ;
-; GB_Hbuff0[121]                            ; 2       ;
 ; GB_Hbuff0[117]                            ; 2       ;
+; GB_Hbuff0[121]                            ; 2       ;
 ; GB_Hbuff0[113]                            ; 2       ;
 ; GB_Hbuff0[125]                            ; 2       ;
 ; GB_Hbuff0[137]                            ; 2       ;
 ; GB_Hbuff0[133]                            ; 2       ;
 ; GB_Hbuff0[129]                            ; 2       ;
 ; GB_Hbuff0[141]                            ; 2       ;
-; GB_Hbuff0[41]                             ; 2       ;
-; GB_Hbuff0[25]                             ; 2       ;
-; GB_Hbuff0[9]                              ; 2       ;
-; GB_Hbuff0[57]                             ; 2       ;
-; GB_Hbuff0[21]                             ; 2       ;
 ; GB_Hbuff0[37]                             ; 2       ;
+; GB_Hbuff0[21]                             ; 2       ;
 ; GB_Hbuff0[5]                              ; 2       ;
 ; GB_Hbuff0[53]                             ; 2       ;
-; GB_Hbuff0[33]                             ; 2       ;
+; GB_Hbuff0[25]                             ; 2       ;
+; GB_Hbuff0[41]                             ; 2       ;
+; GB_Hbuff0[9]                              ; 2       ;
+; GB_Hbuff0[57]                             ; 2       ;
 ; GB_Hbuff0[17]                             ; 2       ;
+; GB_Hbuff0[33]                             ; 2       ;
 ; GB_Hbuff0[1]                              ; 2       ;
 ; GB_Hbuff0[49]                             ; 2       ;
-; GB_Hbuff0[29]                             ; 2       ;
 ; GB_Hbuff0[45]                             ; 2       ;
+; GB_Hbuff0[29]                             ; 2       ;
 ; GB_Hbuff0[13]                             ; 2       ;
 ; GB_Hbuff0[61]                             ; 2       ;
 ; GB_Hbuff0[149]                            ; 2       ;
 ; GB_Hbuff0[153]                            ; 2       ;
 ; GB_Hbuff0[145]                            ; 2       ;
 ; GB_Hbuff0[157]                            ; 2       ;
-; GB_Hbuff1[87]                             ; 2       ;
-; GB_Hbuff1[103]                            ; 2       ;
-; GB_Hbuff1[71]                             ; 2       ;
-; GB_Hbuff1[119]                            ; 2       ;
-; GB_Hbuff1[107]                            ; 2       ;
-; GB_Hbuff1[91]                             ; 2       ;
-; GB_Hbuff1[75]                             ; 2       ;
-; GB_Hbuff1[123]                            ; 2       ;
-; GB_Hbuff1[99]                             ; 2       ;
-; GB_Hbuff1[83]                             ; 2       ;
-; GB_Hbuff1[67]                             ; 2       ;
-; GB_Hbuff1[115]                            ; 2       ;
-; GB_Hbuff1[95]                             ; 2       ;
-; GB_Hbuff1[111]                            ; 2       ;
-; GB_Hbuff1[79]                             ; 2       ;
-; GB_Hbuff1[127]                            ; 2       ;
-; GB_Hbuff1[139]                            ; 2       ;
-; GB_Hbuff1[135]                            ; 2       ;
-; GB_Hbuff1[131]                            ; 2       ;
-; GB_Hbuff1[143]                            ; 2       ;
-; GB_Hbuff1[43]                             ; 2       ;
-; GB_Hbuff1[27]                             ; 2       ;
-; GB_Hbuff1[11]                             ; 2       ;
-; GB_Hbuff1[59]                             ; 2       ;
-; GB_Hbuff1[23]                             ; 2       ;
-; GB_Hbuff1[39]                             ; 2       ;
-; GB_Hbuff1[7]                              ; 2       ;
-; GB_Hbuff1[55]                             ; 2       ;
-; GB_Hbuff1[35]                             ; 2       ;
-; GB_Hbuff1[19]                             ; 2       ;
-; GB_Hbuff1[3]                              ; 2       ;
-; GB_Hbuff1[51]                             ; 2       ;
-; GB_Hbuff1[31]                             ; 2       ;
-; GB_Hbuff1[47]                             ; 2       ;
-; GB_Hbuff1[15]                             ; 2       ;
-; GB_Hbuff1[63]                             ; 2       ;
-; GB_Hbuff1[151]                            ; 2       ;
-; GB_Hbuff1[155]                            ; 2       ;
-; GB_Hbuff1[147]                            ; 2       ;
-; GB_Hbuff1[159]                            ; 2       ;
 ; GB_Hbuff1[84]                             ; 2       ;
 ; GB_Hbuff1[100]                            ; 2       ;
 ; GB_Hbuff1[68]                             ; 2       ;
@@ -857,7 +782,47 @@ Encoding Type:  One-Hot
 ; GB_Hbuff1[124]                            ; 2       ;
 ; GB_Hbuff1[136]                            ; 2       ;
 ; GB_Hbuff1[132]                            ; 2       ;
-; Total number of inverted registers = 180* ;         ;
+; GB_Hbuff1[128]                            ; 2       ;
+; GB_Hbuff1[140]                            ; 2       ;
+; GB_Hbuff1[40]                             ; 2       ;
+; GB_Hbuff1[24]                             ; 2       ;
+; GB_Hbuff1[8]                              ; 2       ;
+; GB_Hbuff1[56]                             ; 2       ;
+; GB_Hbuff1[20]                             ; 2       ;
+; GB_Hbuff1[36]                             ; 2       ;
+; GB_Hbuff1[4]                              ; 2       ;
+; GB_Hbuff1[52]                             ; 2       ;
+; GB_Hbuff1[32]                             ; 2       ;
+; GB_Hbuff1[16]                             ; 2       ;
+; GB_Hbuff1[0]                              ; 2       ;
+; GB_Hbuff1[48]                             ; 2       ;
+; GB_Hbuff1[28]                             ; 2       ;
+; GB_Hbuff1[44]                             ; 2       ;
+; GB_Hbuff1[12]                             ; 2       ;
+; GB_Hbuff1[60]                             ; 2       ;
+; GB_Hbuff1[148]                            ; 2       ;
+; GB_Hbuff1[152]                            ; 2       ;
+; GB_Hbuff1[144]                            ; 2       ;
+; GB_Hbuff1[156]                            ; 2       ;
+; GB_Hbuff1[103]                            ; 2       ;
+; GB_Hbuff1[107]                            ; 2       ;
+; GB_Hbuff1[99]                             ; 2       ;
+; GB_Hbuff1[111]                            ; 2       ;
+; GB_Hbuff1[91]                             ; 2       ;
+; GB_Hbuff1[87]                             ; 2       ;
+; GB_Hbuff1[83]                             ; 2       ;
+; GB_Hbuff1[95]                             ; 2       ;
+; GB_Hbuff1[71]                             ; 2       ;
+; GB_Hbuff1[75]                             ; 2       ;
+; GB_Hbuff1[67]                             ; 2       ;
+; GB_Hbuff1[79]                             ; 2       ;
+; GB_Hbuff1[123]                            ; 2       ;
+; GB_Hbuff1[119]                            ; 2       ;
+; GB_Hbuff1[115]                            ; 2       ;
+; GB_Hbuff1[127]                            ; 2       ;
+; GB_Hbuff1[139]                            ; 2       ;
+; GB_Hbuff1[135]                            ; 2       ;
+; Total number of inverted registers = 168* ;         ;
 +-------------------------------------------+---------+
 * Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
@@ -869,22 +834,22 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------+
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|cnt160[0]                                                                                             ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|X_cntpix[3]                                                                                           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|GB_color_00[0]                                                                                        ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|Y_cntpix[3]                                                                                           ;
-; 3:1                ; 159 bits  ; 318 LEs       ; 159 LEs              ; 159 LEs                ; Yes        ; |DE0_GameBoy_DMG01|GB_Hbuff0[118]                                                                                        ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|rcntmem[0]                                                                                            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|cnt144[3]                                                                                             ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|read_addr[1]                                                                                          ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|read_addr[6]                                                                                          ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|GB_Vcnt[6]                                                                                            ;
-; 265:1              ; 10 bits   ; 1760 LEs      ; 1120 LEs             ; 640 LEs                ; Yes        ; |DE0_GameBoy_DMG01|pixel_color[11]                                                                                       ;
-; 3:1                ; 157 bits  ; 314 LEs       ; 314 LEs              ; 0 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|GB_Hbuff0[149]                                                                                        ;
-; 40:1               ; 8 bits    ; 208 LEs       ; 208 LEs              ; 0 LEs                  ; No         ; |DE0_GameBoy_DMG01|Mux3                                                                                                  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|GB_color_00[4]                                                                                        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|Y_cntpix[0]                                                                                           ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|cnt144[0]                                                                                             ;
+; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|rcntmem[12]                                                                                           ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|read_addr[2]                                                                                          ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|read_addr[5]                                                                                          ;
+; 5:1                ; 167 bits  ; 501 LEs       ; 167 LEs              ; 334 LEs                ; Yes        ; |DE0_GameBoy_DMG01|GB_Hbuff1[129]                                                                                        ;
+; 40:1               ; 8 bits    ; 208 LEs       ; 208 LEs              ; 0 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|disp_mem_data[1]                                                                                      ;
+; 265:1              ; 10 bits   ; 1760 LEs      ; 1120 LEs             ; 640 LEs                ; Yes        ; |DE0_GameBoy_DMG01|pixel_color[0]                                                                                        ;
+; 5:1                ; 159 bits  ; 477 LEs       ; 159 LEs              ; 318 LEs                ; Yes        ; |DE0_GameBoy_DMG01|GB_Hbuff0[51]                                                                                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE0_GameBoy_DMG01|safe                                                                                                  ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                    ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE0_GameBoy_DMG01|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                       ;
 ; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[0] ;
 ; 6:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[2]                             ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 52 LEs               ; 36 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[0]                      ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 56 LEs               ; 32 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[0]                      ;
 ; 20:1               ; 4 bits    ; 52 LEs        ; 32 LEs               ; 20 LEs                 ; Yes        ; |DE0_GameBoy_DMG01|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------+
 
@@ -1420,63 +1385,63 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                                           ;
-+-------------------------------------------------+--------------------------------------------------------+----------------+
-; Parameter Name                                  ; Value                                                  ; Type           ;
-+-------------------------------------------------+--------------------------------------------------------+----------------+
-; lpm_type                                        ; sld_signaltap                                          ; String         ;
-; sld_node_info                                   ; 805334528                                              ; Untyped        ;
-; SLD_IP_VERSION                                  ; 6                                                      ; Signed Integer ;
-; SLD_IP_MINOR_VERSION                            ; 0                                                      ; Signed Integer ;
-; SLD_COMMON_IP_VERSION                           ; 0                                                      ; Signed Integer ;
-; sld_data_bits                                   ; 21                                                     ; Untyped        ;
-; sld_trigger_bits                                ; 9                                                      ; Untyped        ;
-; SLD_NODE_CRC_BITS                               ; 32                                                     ; Signed Integer ;
-; sld_node_crc_hiword                             ; 46129                                                  ; Untyped        ;
-; sld_node_crc_loword                             ; 20529                                                  ; Untyped        ;
-; SLD_INCREMENTAL_ROUTING                         ; 0                                                      ; Signed Integer ;
-; sld_sample_depth                                ; 8192                                                   ; Untyped        ;
-; sld_segment_size                                ; 8192                                                   ; Untyped        ;
-; sld_ram_block_type                              ; AUTO                                                   ; Untyped        ;
-; sld_state_bits                                  ; 11                                                     ; Untyped        ;
-; sld_buffer_full_stop                            ; 1                                                      ; Untyped        ;
-; SLD_MEM_ADDRESS_BITS                            ; 7                                                      ; Signed Integer ;
-; SLD_DATA_BIT_CNTR_BITS                          ; 4                                                      ; Signed Integer ;
-; sld_trigger_level                               ; 1                                                      ; Untyped        ;
-; sld_trigger_in_enabled                          ; 0                                                      ; Untyped        ;
-; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                                                      ; Signed Integer ;
-; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                                                      ; Signed Integer ;
-; SLD_HPS_EVENT_ENABLED                           ; 0                                                      ; Signed Integer ;
-; SLD_HPS_EVENT_ID                                ; 0                                                      ; Signed Integer ;
-; sld_advanced_trigger_entity                     ; basic,1,                                               ; Untyped        ;
-; sld_trigger_level_pipeline                      ; 1                                                      ; Untyped        ;
-; sld_enable_advanced_trigger                     ; 0                                                      ; Untyped        ;
-; SLD_ADVANCED_TRIGGER_1                          ; NONE                                                   ; String         ;
-; SLD_ADVANCED_TRIGGER_2                          ; NONE                                                   ; String         ;
-; SLD_ADVANCED_TRIGGER_3                          ; NONE                                                   ; String         ;
-; SLD_ADVANCED_TRIGGER_4                          ; NONE                                                   ; String         ;
-; SLD_ADVANCED_TRIGGER_5                          ; NONE                                                   ; String         ;
-; SLD_ADVANCED_TRIGGER_6                          ; NONE                                                   ; String         ;
-; SLD_ADVANCED_TRIGGER_7                          ; NONE                                                   ; String         ;
-; SLD_ADVANCED_TRIGGER_8                          ; NONE                                                   ; String         ;
-; SLD_ADVANCED_TRIGGER_9                          ; NONE                                                   ; String         ;
-; SLD_ADVANCED_TRIGGER_10                         ; NONE                                                   ; String         ;
-; sld_inversion_mask_length                       ; 54                                                     ; Untyped        ;
-; sld_inversion_mask                              ; 000000000000000000000000000000000000000000000000000000 ; Untyped        ;
-; sld_power_up_trigger                            ; 0                                                      ; Untyped        ;
-; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd                              ; String         ;
-; sld_state_flow_use_generated                    ; 0                                                      ; Untyped        ;
-; sld_current_resource_width                      ; 1                                                      ; Untyped        ;
-; sld_attribute_mem_mode                          ; OFF                                                    ; Untyped        ;
-; SLD_STORAGE_QUALIFIER_BITS                      ; 1                                                      ; Signed Integer ;
-; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                                                      ; Signed Integer ;
-; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                                                    ; String         ;
-; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                                      ; Signed Integer ;
-; sld_storage_qualifier_inversion_mask_length     ; 0                                                      ; Untyped        ;
-; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                                                  ; String         ;
-; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                                      ; Signed Integer ;
-+-------------------------------------------------+--------------------------------------------------------+----------------+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                               ;
++-------------------------------------------------+--------------------------------------------+----------------+
+; Parameter Name                                  ; Value                                      ; Type           ;
++-------------------------------------------------+--------------------------------------------+----------------+
+; lpm_type                                        ; sld_signaltap                              ; String         ;
+; sld_node_info                                   ; 805334528                                  ; Untyped        ;
+; SLD_IP_VERSION                                  ; 6                                          ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                                          ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                                          ; Signed Integer ;
+; sld_data_bits                                   ; 1                                          ; Untyped        ;
+; sld_trigger_bits                                ; 9                                          ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                                         ; Signed Integer ;
+; sld_node_crc_hiword                             ; 893                                        ; Untyped        ;
+; sld_node_crc_loword                             ; 20529                                      ; Untyped        ;
+; SLD_INCREMENTAL_ROUTING                         ; 0                                          ; Signed Integer ;
+; sld_sample_depth                                ; 0                                          ; Untyped        ;
+; sld_segment_size                                ; 1                                          ; Untyped        ;
+; sld_ram_block_type                              ; AUTO                                       ; Untyped        ;
+; sld_state_bits                                  ; 11                                         ; Untyped        ;
+; sld_buffer_full_stop                            ; 1                                          ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                                          ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                                          ; Signed Integer ;
+; sld_trigger_level                               ; 1                                          ; Untyped        ;
+; sld_trigger_in_enabled                          ; 0                                          ; Untyped        ;
+; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                                          ; Signed Integer ;
+; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                                          ; Signed Integer ;
+; SLD_HPS_EVENT_ENABLED                           ; 0                                          ; Signed Integer ;
+; SLD_HPS_EVENT_ID                                ; 0                                          ; Signed Integer ;
+; sld_advanced_trigger_entity                     ; basic,1,                                   ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                                          ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 0                                          ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                                       ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                                       ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                                       ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                                       ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                                       ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                                       ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                                       ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                                       ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                                       ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                                       ; String         ;
+; sld_inversion_mask_length                       ; 42                                         ; Untyped        ;
+; sld_inversion_mask                              ; 000000000000000000000000000000000000000000 ; Untyped        ;
+; sld_power_up_trigger                            ; 0                                          ; Untyped        ;
+; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd                  ; String         ;
+; sld_state_flow_use_generated                    ; 0                                          ; Untyped        ;
+; sld_current_resource_width                      ; 1                                          ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                                        ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_BITS                      ; 1                                          ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                                          ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                                        ; String         ;
+; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                          ; Signed Integer ;
+; sld_storage_qualifier_inversion_mask_length     ; 0                                          ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                                      ; String         ;
+; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                          ; Signed Integer ;
++-------------------------------------------------+--------------------------------------------+----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1551,7 +1516,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
 ; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Storage Qualifier Type ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
 +----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
-; 0              ; auto_signaltap_0 ; 9                   ; 21               ; 8192         ; 1        ; continuous             ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
+; 0              ; auto_signaltap_0 ; 9                   ; 0                ; 0            ; 0        ; continuous             ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
 +----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
 
 
@@ -1560,7 +1525,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+--------------+
 ; Partition Name   ; Elapsed Time ;
 +------------------+--------------+
-; Top              ; 00:00:12     ;
+; Top              ; 00:00:13     ;
 ; sld_hub:auto_hub ; 00:00:00     ;
 +------------------+--------------+
 
@@ -1571,35 +1536,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                            ; Type          ; Status    ; Partition Name ; Netlist Type Used ; Actual Connection                                                                                                        ; Details ;
 +---------------------------------+---------------+-----------+----------------+-------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
 ; DE0_VGA:VGA_Driver|pixel_clk[0] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll2:auto_generated|wire_pll1_clk[0] ; N/A     ;
-; GB_Data0[0]                     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Data0[0]                                                                                                              ; N/A     ;
-; GB_Data1[0]                     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Data1[0]                                                                                                              ; N/A     ;
 ; GB_HSync[0]                     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_HSync[0]                                                                                                              ; N/A     ;
-; GB_HSync[0]                     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_HSync[0]                                                                                                              ; N/A     ;
-; GB_Hcnt[0]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Hcnt[0]                                                                                                               ; N/A     ;
-; GB_Hcnt[1]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Hcnt[1]                                                                                                               ; N/A     ;
-; GB_Hcnt[2]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Hcnt[2]                                                                                                               ; N/A     ;
-; GB_Hcnt[3]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Hcnt[3]                                                                                                               ; N/A     ;
-; GB_Hcnt[4]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Hcnt[4]                                                                                                               ; N/A     ;
-; GB_Hcnt[5]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Hcnt[5]                                                                                                               ; N/A     ;
-; GB_Hcnt[6]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Hcnt[6]                                                                                                               ; N/A     ;
-; GB_Hcnt[7]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Hcnt[7]                                                                                                               ; N/A     ;
-; GB_PClk[0]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_PClk[0]                                                                                                               ; N/A     ;
-; GB_VSync[0]                     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_VSync[0]                                                                                                              ; N/A     ;
-; GB_Vcnt[0]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[0]                                                                                                               ; N/A     ;
 ; GB_Vcnt[0]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[0]                                                                                                               ; N/A     ;
 ; GB_Vcnt[1]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[1]                                                                                                               ; N/A     ;
-; GB_Vcnt[1]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[1]                                                                                                               ; N/A     ;
-; GB_Vcnt[2]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[2]                                                                                                               ; N/A     ;
 ; GB_Vcnt[2]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[2]                                                                                                               ; N/A     ;
 ; GB_Vcnt[3]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[3]                                                                                                               ; N/A     ;
-; GB_Vcnt[3]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[3]                                                                                                               ; N/A     ;
-; GB_Vcnt[4]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[4]                                                                                                               ; N/A     ;
 ; GB_Vcnt[4]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[4]                                                                                                               ; N/A     ;
 ; GB_Vcnt[5]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[5]                                                                                                               ; N/A     ;
-; GB_Vcnt[5]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[5]                                                                                                               ; N/A     ;
 ; GB_Vcnt[6]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[6]                                                                                                               ; N/A     ;
-; GB_Vcnt[6]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[6]                                                                                                               ; N/A     ;
-; GB_Vcnt[7]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[7]                                                                                                               ; N/A     ;
 ; GB_Vcnt[7]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GB_Vcnt[7]                                                                                                               ; N/A     ;
 +---------------------------------+---------------+-----------+----------------+-------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
 
@@ -1610,7 +1554,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Nov 21 01:50:39 2015
+    Info: Processing started: Sat Nov 21 13:46:55 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_GameBoy_DMG01 -c DE0_GameBoy_DMG01
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file screenshot_ram.v
@@ -1624,7 +1568,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file de0_vga
 Info (12021): Found 1 design units, including 1 entities, in source file de0_gameboy_dmg01.v
     Info (12023): Found entity 1: DE0_GameBoy_DMG01
 Info (12127): Elaborating entity "DE0_GameBoy_DMG01" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at DE0_GameBoy_DMG01.v(85): object "safe" assigned a value but never read
 Info (12128): Elaborating entity "DE0_VGA" for hierarchy "DE0_VGA:VGA_Driver"
 Warning (10230): Verilog HDL assignment warning at DE0_VGA.v(45): truncated value with size 32 to match size of target (11)
 Warning (10230): Verilog HDL assignment warning at DE0_VGA.v(46): truncated value with size 32 to match size of target (11)
@@ -1717,24 +1660,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
     Info (12023): Found entity 1: altsyncram_mgq1
 Info (12128): Elaborating entity "altsyncram_mgq1" for hierarchy "DISP_RAM:RAM_Driver|altsyncram:altsyncram_component|altsyncram_mgq1:auto_generated"
 Info (12128): Elaborating entity "ScreenShot_RAM" for hierarchy "ScreenShot_RAM:ScreenShot_RAM_Driver"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_nv14.tdf
-    Info (12023): Found entity 1: altsyncram_nv14
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_mrc.tdf
-    Info (12023): Found entity 1: mux_mrc
-Info (12021): Found 1 design units, including 1 entities, in source file db/decode_4uf.tdf
-    Info (12023): Found entity 1: decode_4uf
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ifi.tdf
-    Info (12023): Found entity 1: cntr_ifi
-Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ifc.tdf
-    Info (12023): Found entity 1: cmpr_ifc
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_f8j.tdf
-    Info (12023): Found entity 1: cntr_f8j
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_bfi.tdf
-    Info (12023): Found entity 1: cntr_bfi
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_p1j.tdf
-    Info (12023): Found entity 1: cntr_p1j
-Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_efc.tdf
-    Info (12023): Found entity 1: cmpr_efc
 Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
@@ -1752,16 +1677,16 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "OEC[0]" is stuck at VCC
     Warning (13410): Pin "OED[0]" is stuck at GND
     Warning (13410): Pin "DIRA[0]" is stuck at GND
-Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
-Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
-Info (35024): Succesfully connected in-system debug instance "auto_signaltap_0" to all 31 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
+Info (35024): Succesfully connected in-system debug instance "auto_signaltap_0" to all 10 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 9 input pin(s) that do not drive logic
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "INPUT_SWS[2]"
+    Warning (15610): No output dependent on input pin "INPUT_SWS[3]"
     Warning (15610): No output dependent on input pin "INPUT_SWS[4]"
     Warning (15610): No output dependent on input pin "INPUT_SWS[5]"
     Warning (15610): No output dependent on input pin "INPUT_SWS[6]"
@@ -1771,16 +1696,16 @@ Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "INPUT_BTN[0]"
     Warning (15610): No output dependent on input pin "INPUT_BTN[1]"
     Warning (15610): No output dependent on input pin "INPUT_BTN[2]"
-Info (21057): Implemented 5091 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5162 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 20 output pins
-    Info (21061): Implemented 5018 logic cells
-    Info (21064): Implemented 29 RAM segments
+    Info (21061): Implemented 5110 logic cells
+    Info (21064): Implemented 8 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 31 warnings
-    Info: Peak virtual memory: 667 megabytes
-    Info: Processing ended: Sat Nov 21 01:50:58 2015
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:19
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 659 megabytes
+    Info: Processing ended: Sat Nov 21 13:47:15 2015
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:20
 
 

@@ -7,7 +7,7 @@ module DE0_GameBoy_DMG01
 `define colorbar0 160'b1010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010
 `define colorbar1 160'b1001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001 
 
-`define clear159  159'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+`define clear160  160'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 
 input		wire				clk_50;
 
@@ -139,120 +139,66 @@ always @(negedge GB_PClk)
 	if(GB_HSync == 1)
 		begin
 			safe <= 0;
-			if(INPUT_SWS[2] == 1)
-				begin
-					GB_Hbuff0		<= `colorbar0;
-					GB_Hbuff1		<= `colorbar1;
-				end
-			else
-				begin
-					GB_Hbuff0 <= {!GB_Data0,`clear159};
-					GB_Hbuff1 <= {!GB_Data1,`clear159};
-				end
+			GB_Hbuff0 <= `clear160;
+			GB_Hbuff1 <= `clear160;
 			GB_Hcnt <= 0;
-			if(GB_VSync == 1)
-				begin
-					GB_Vcnt <= 0;								
-				end
 		end
 	else
 		begin
 			if (GB_Hcnt == 158)
 				begin
-					if(INPUT_SWS[2] == 1)
-						begin
-							GB_Hbuff0		<= `colorbar0;
-							GB_Hbuff1		<= `colorbar1;
-						end
-					else
-						begin
-							GB_Hbuff0 <= {!GB_Data0,GB_Hbuff0[159:2],test0};
-							GB_Hbuff1 <= {!GB_Data1,GB_Hbuff1[159:2],test1};
-						end
+					GB_Hbuff0 <= {!GB_Data0,GB_Hbuff0[159:2],test0};
+					GB_Hbuff1 <= {!GB_Data1,GB_Hbuff1[159:2],test1};
 					GB_Hcnt <= GB_Hcnt + 1'b1;
 					safe <= 1;								
 				end
-			else if (GB_Hcnt == 150)
+			else if (GB_Hcnt == 100)
 				begin
-					if(INPUT_SWS[2] == 1)
-						begin
-							GB_Hbuff0		<= `colorbar0;
-							GB_Hbuff1		<= `colorbar1;
-						end
-					else
-						begin
-							GB_Hbuff0 <= {!GB_Data0,GB_Hbuff0[159:1]};
-							GB_Hbuff1 <= {!GB_Data1,GB_Hbuff1[159:1]};
-						end
+					GB_Hbuff0 <= {!GB_Data0,GB_Hbuff0[159:1]};
+					GB_Hbuff1 <= {!GB_Data1,GB_Hbuff1[159:1]};
 					GB_Hcnt <= GB_Hcnt + 1'b1;
 					if(GB_VSync == 0)
 						begin
 							GB_Vcnt <= GB_Vcnt + 1'b1;			
 						end
+					else	
+						begin
+							GB_Vcnt <= 0;	
+						end							
 				end
-			else
+			else if (safe == 0)
 				begin
-					if(INPUT_SWS[2] == 1)
-						begin
-							GB_Hbuff0		<= `colorbar0;
-							GB_Hbuff1		<= `colorbar1;
-						end
-					else
-						begin
-							GB_Hbuff0 <= {!GB_Data0,GB_Hbuff0[159:1]};
-							GB_Hbuff1 <= {!GB_Data1,GB_Hbuff1[159:1]};
-						end
+					GB_Hbuff0 <= {!GB_Data0,GB_Hbuff0[159:1]};
+					GB_Hbuff1 <= {!GB_Data1,GB_Hbuff1[159:1]};
 					GB_Hcnt <= GB_Hcnt + 1'b1;
 				end
 		end
 	end
 
-always @(posedge pixel_clk)
+always @(negedge pixel_clk)
 	begin
-		if(GB_Hcnt >= 159 && wcntmem >= 40 && H_visible == 0)
+		if(safe == 1 && wcntmem >= 40 && H_visible == 0)
 			begin
 				disp_mem_wren <= 0;
 				wcntmem <= wcntmem;
 				write_addr <= wcntmem + (GB_Vcnt*13'd40);
-				if(INPUT_SWS[3] == 1)
-					begin
-						disp_mem_data <= {GB_Hbuff0[(wcntmem*4)+3], GB_Hbuff1[(wcntmem*4)+3], GB_Hbuff0[(wcntmem*4)+2], GB_Hbuff1[(wcntmem*4)+2], GB_Hbuff0[(wcntmem*4)+1], GB_Hbuff1[(wcntmem*4)+1], GB_Hbuff0[(wcntmem*4)], GB_Hbuff1[(wcntmem*4)]};
-					end
-				else
-					begin
-						disp_mem_data <= {GB_Hbuff0[(wcntmem*4)], GB_Hbuff1[(wcntmem*4)], GB_Hbuff0[(wcntmem*4)+1], GB_Hbuff1[(wcntmem*4)+1], GB_Hbuff0[(wcntmem*4)+2], GB_Hbuff1[(wcntmem*4)+2], GB_Hbuff0[(wcntmem*4)+3], GB_Hbuff1[(wcntmem*4)+3]};
-					end
+				disp_mem_data <= {GB_Hbuff0[(wcntmem*4)], GB_Hbuff1[(wcntmem*4)], GB_Hbuff0[(wcntmem*4)+1], GB_Hbuff1[(wcntmem*4)+1], GB_Hbuff0[(wcntmem*4)+2], GB_Hbuff1[(wcntmem*4)+2], GB_Hbuff0[(wcntmem*4)+3], GB_Hbuff1[(wcntmem*4)+3]};
 			end
-		else if(GB_Hcnt >= 159 && wcntmem <= 39 && H_visible == 0)
+		else if(safe == 1 && wcntmem <= 39 && H_visible == 0)
 			begin
 				disp_mem_wren <= 1;
 				wcntmem <= wcntmem + 1'b1;
 				write_addr <= wcntmem + (GB_Vcnt*13'd40);
-				if(INPUT_SWS[3] == 1)
-					begin
-						disp_mem_data <= {GB_Hbuff0[(wcntmem*4)+3], GB_Hbuff1[(wcntmem*4)+3], GB_Hbuff0[(wcntmem*4)+2], GB_Hbuff1[(wcntmem*4)+2], GB_Hbuff0[(wcntmem*4)+1], GB_Hbuff1[(wcntmem*4)+1], GB_Hbuff0[(wcntmem*4)], GB_Hbuff1[(wcntmem*4)]};
-					end
-				else
-					begin
-						disp_mem_data <= {GB_Hbuff0[(wcntmem*4)], GB_Hbuff1[(wcntmem*4)], GB_Hbuff0[(wcntmem*4)+1], GB_Hbuff1[(wcntmem*4)+1], GB_Hbuff0[(wcntmem*4)+2], GB_Hbuff1[(wcntmem*4)+2], GB_Hbuff0[(wcntmem*4)+3], GB_Hbuff1[(wcntmem*4)+3]};
-					end			
+				disp_mem_data <= {GB_Hbuff0[(wcntmem*4)], GB_Hbuff1[(wcntmem*4)], GB_Hbuff0[(wcntmem*4)+1], GB_Hbuff1[(wcntmem*4)+1], GB_Hbuff0[(wcntmem*4)+2], GB_Hbuff1[(wcntmem*4)+2], GB_Hbuff0[(wcntmem*4)+3], GB_Hbuff1[(wcntmem*4)+3]};			
 			end
 		else
 			begin
 				disp_mem_wren <= 0;
 				wcntmem <= 0;
 				write_addr <= wcntmem + (GB_Vcnt*13'd40);
-				if(INPUT_SWS[3] == 1)
-					begin
-						disp_mem_data <= {GB_Hbuff0[(wcntmem*4)+3], GB_Hbuff1[(wcntmem*4)+3], GB_Hbuff0[(wcntmem*4)+2], GB_Hbuff1[(wcntmem*4)+2], GB_Hbuff0[(wcntmem*4)+1], GB_Hbuff1[(wcntmem*4)+1], GB_Hbuff0[(wcntmem*4)], GB_Hbuff1[(wcntmem*4)]};
-					end
-				else
-					begin
-						disp_mem_data <= {GB_Hbuff0[(wcntmem*4)], GB_Hbuff1[(wcntmem*4)], GB_Hbuff0[(wcntmem*4)+1], GB_Hbuff1[(wcntmem*4)+1], GB_Hbuff0[(wcntmem*4)+2], GB_Hbuff1[(wcntmem*4)+2], GB_Hbuff0[(wcntmem*4)+3], GB_Hbuff1[(wcntmem*4)+3]};
-					end
+				disp_mem_data <= {GB_Hbuff0[(wcntmem*4)], GB_Hbuff1[(wcntmem*4)], GB_Hbuff0[(wcntmem*4)+1], GB_Hbuff1[(wcntmem*4)+1], GB_Hbuff0[(wcntmem*4)+2], GB_Hbuff1[(wcntmem*4)+2], GB_Hbuff0[(wcntmem*4)+3], GB_Hbuff1[(wcntmem*4)+3]};
 			end
-	end
-	
+	end	
 	
 always @(posedge pixel_clk)
 	begin
@@ -420,7 +366,7 @@ always @(posedge pixel_clk)
 			end
 		else
 			begin
-				//rcntmem <= 0;
+				rcntmem <= 0;
 
 				read_addr <= ((mem144+1'b1)*13'd40);	
 			end
